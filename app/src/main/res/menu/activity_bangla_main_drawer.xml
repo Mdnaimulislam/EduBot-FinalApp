@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_bangla_home"
+            android:icon="@drawable/ic_home"
+            android:title="হোম" />
+        <item
+            android:id="@+id/nav_bangla_book"
+            android:icon="@drawable/ic_book"
+            android:title="বই পড়" />
+        <item
+            android:id="@+id/nav_bangla_learn"
+            android:icon="@drawable/ic_selflearn"
+            android:title="রোবটকে শিখাও" />
+        <item
+            android:id="@+id/nav_bangla_read"
+            android:icon="@drawable/ic_scan"
+            android:title="বই এর লেখা পড়" />
+        <item
+            android:id="@+id/nav_bangla_calculator"
+            android:icon="@drawable/ic_calculator"
+            android:title="ছবি তুলে অংক কর" />
+        <item
+            android:id="@+id/nav_bangla_tutorial"
+            android:icon="@drawable/ic_tutorial"
+            android:title="অ্যাপ্লিকেশন গাইডলাইন" />
+        <item
+            android:id="@+id/nav_bangla_website"
+            android:icon="@drawable/ic_website"
+            android:title="রোবটক ভ্যালী ওয়েবসাইট" />
+        <item
+            android:id="@+id/nav_bangla_help"
+            android:icon="@drawable/ic_help"
+            android:title="হেল্প" />
+        <item
+            android:id="@+id/nav_bangla_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="লগআউট" />
+    </group>
+</menu>

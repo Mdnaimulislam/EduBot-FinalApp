@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Choose_Language"
+    android:background="#E5E9EA">
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="220dp"
+        android:backgroundTint="@color/white"
+        android:text="LOGOUT"
+        android:textColor="#0288D1"
+        android:textSize="17sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/english_btn"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:backgroundTint="@color/white"
+        android:text="English"
+        android:textColor="#E30E0E"
+        android:textSize="20sp"
+        android:textStyle="italic" />
+    <Button
+        android:id="@+id/bangla_btn"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/english_btn"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/white"
+        android:text="বাংলা"
+        android:textColor="#0C390E"
+        android:textSize="23sp"
+        android:textStyle="italic" />
+</RelativeLayout>

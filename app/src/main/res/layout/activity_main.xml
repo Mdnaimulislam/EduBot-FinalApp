@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="188dp"
+        android:layout_height="168dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/office"
+        app:civ_border_color="#021422"
+        app:civ_border_width="4dp"
+        android:layout_centerHorizontal="true"
+         />
+
+    <EditText
+        android:id="@+id/uemail"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/editshap"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:textColor="#131111"
+        android:textColorHint="#090808" />
+
+    <EditText
+        android:id="@+id/l_upass"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="31dp"
+        android:background="@drawable/editshap"
+        android:hint="@string/your_password"
+        android:inputType="textPassword"
+        android:textColorHint="#191515"
+        android:textColor="#090505"
+        android:layout_below="@+id/uemail"
+        android:autofillHints=""
+        android:layout_centerHorizontal="true"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_below="@+id/l_upass"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:id="@+id/forgetpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progressBar"
+        android:text="Forget Password"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
+        />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="241dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/btmcolor"
+        android:text="@string/login"
+        android:textColor="#120D0D"
+        android:layout_below="@+id/forgetpass"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"
+         />
+
+    <Button
+        android:id="@+id/r_btn"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/login_btn"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/btmcolor"
+        android:text="@string/register_now"
+        android:textColor="#120D0D"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>

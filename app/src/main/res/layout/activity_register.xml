@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Register"
+    android:orientation="vertical"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="125dp"
+        android:layout_height="79dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/office"
+        app:civ_border_color="#021422"
+        app:civ_border_width="4dp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@id/profile_image"
+        android:background="@drawable/editshap"
+        android:hint="@string/full_name"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:autofillHints="" />
+
+
+    <EditText
+        android:id="@+id/u_pass"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/editshap"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"
+        android:textColorHint="#fff"
+        android:layout_below="@+id/name"
+
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/u_email"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/editshap"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"
+        android:textColorHint="#fff"
+        android:layout_below="@+id/u_pass"
+        android:autofillHints=""
+        />
+    <EditText
+        android:id="@+id/u_phone"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/editshap"
+        android:hint="@string/phone_number"
+        android:inputType="phone"
+        android:textColor="#fff"
+        android:layout_centerHorizontal="true"
+        android:textColorHint="#fff"
+        android:layout_below="@+id/u_email"
+
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/u_address"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/editshap"
+        android:hint="@string/address"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:layout_below="@+id/u_phone"
+        android:inputType="text"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/registerbtn"
+        android:layout_width="241dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/u_address"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:backgroundTint="@color/btmcolor"
+        android:text="@string/register"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/gt_lgn_btn"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/btmcolor"
+        android:text="@string/go_to_login"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/registerbtn"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
