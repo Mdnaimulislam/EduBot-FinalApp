@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_selflearn"
             android:title="রোবটকে শিখাও" />
         <item
-            android:id="@+id/nav_bangla_read"
+            android:id="@+id/nav_bangla_scan"
             android:icon="@drawable/ic_scan"
             android:title="বই এর লেখা পড়" />
         <item

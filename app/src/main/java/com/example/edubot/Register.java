@@ -103,7 +103,6 @@ public class Register extends AppCompatActivity {
         }
 
 
-
         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(user_email,user_pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -111,14 +110,17 @@ public class Register extends AppCompatActivity {
                 if(task.isSuccessful()){
                     FirebaseUser currentUser =FirebaseAuth.getInstance().getCurrentUser();
                     User user=new User(full_name,user_email,user_phone,user_address);
-                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+
+                    FirebaseDatabase.getInstance().getReference("Users").child(currentUser.getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
+                                FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("Self Questions").child("তুমি কি খাও").setValue("আমি কিছু খাই না।আমি ব্যাটারি চালিত।");
                                 Toast.makeText(Register.this,"User has been registered successfully! Check Email for Verfication",Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                                 currentUser.sendEmailVerification();
+
                                 startActivity(new Intent(Register.this, MainActivity.class));
                             }
                             else {

@@ -28,10 +28,14 @@ import android.widget.ToggleButton;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import com.example.edubot.Choose_Language;
+import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -61,8 +65,10 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
     ToggleButton talk;
     private SpeechRecognizer speechRecognizer;
     private Intent intentRecognizer;
+    private FirebaseAuth mAuth;
     private  int x;
     private  String question="";
+    String Uid="";
 
 
     @Override
@@ -70,7 +76,11 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bangla);
         //database
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser=mAuth.getCurrentUser();
+        Uid=currentUser.getUid();
         DatabaseReference dbQuestions = FirebaseDatabase.getInstance().getReference().child("Constant Questions");
+        DatabaseReference slQuestions = FirebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("Self Questions");
 
 
         //permission
@@ -146,6 +156,8 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                     }
                                 speechRecognizer.startListening(intentRecognizer);
                                 }
+
+
                                 else if(finalInput.contains("সম্পর্কে বল")){
                                     try {
                                         Qanswer = QueryWiki(finalInput);
@@ -162,11 +174,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                         e.printStackTrace();
                                     }
                                 }
-                                else {
-                                    //aiChat.setText("No Answer");
-                                }
                             }
-
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
@@ -174,12 +182,38 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                             }
                         });
 
+                    slQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            String Qanswer = (String) snapshot.child(finalInput).getValue();
+
+                            if (Qanswer != null) {
+                                tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
+                                }
+                                speechRecognizer.startListening(intentRecognizer);
+                            }
+                            else {
+                                tts.speak("দুঃখিত আমি এই প্রশ্ন এর উত্তর বলতে এখনও অক্ষম।আমাকে যদি শিখাতে চান তাহলে রোবটকে শিখাও অপশন এ যান। ধন্যবাদ।",TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
+
+                                }
+                                speechRecognizer.startListening(intentRecognizer);
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
             }
             }
 
             @Override
             public void onPartialResults(Bundle bundle) {
-
+                    speechRecognizer.startListening(intentRecognizer);
             }
 
             @Override
@@ -240,6 +274,34 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
+        if(id==R.id.nav_bangla_home){
+        }
+        else if(id==R.id.nav_bangla_book){
+
+        }
+        else if(id==R.id.nav_bangla_learn){
+            startActivity(new Intent(this,SelfLearnBangla.class));
+        }
+        else if(id==R.id.nav_bangla_scan){
+
+        }
+        else if(id==R.id.nav_bangla_calculator){
+
+        }
+        else if(id==R.id.nav_bangla_tutorial){
+
+        }
+        else if(id==R.id.nav_bangla_website){
+
+        }
+        else if(id==R.id.nav_bangla_help){
+
+        }
+        else if(id==R.id.nav_bangla_logout){
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(this, MainActivity.class));
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

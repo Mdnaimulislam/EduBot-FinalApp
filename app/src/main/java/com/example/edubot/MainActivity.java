@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser=mAuth.getCurrentUser();
         if(currentUser!=null){
-            startActivity(new Intent(MainActivity.this, Choose_Language.class));
+            currentUser.reload();
         }
 
 

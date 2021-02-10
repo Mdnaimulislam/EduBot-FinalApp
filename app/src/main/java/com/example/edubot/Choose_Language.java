@@ -21,7 +21,6 @@ public class Choose_Language extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose__language);
 
-        logout_btn=(Button)findViewById(R.id.logout_btn);
         english_btn=(Button)findViewById(R.id.english_btn);
         bangla_btn=(Button)findViewById(R.id.bangla_btn);
 
@@ -39,13 +38,5 @@ public class Choose_Language extends AppCompatActivity {
             }
         });
 
-
-        logout_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(Choose_Language.this,MainActivity.class));
-            }
-        });
     }
 }
