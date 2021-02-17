@@ -24,4 +24,17 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="title_activity_bangla_main">BanglaMain</string>
     <string name="title_activity_bangla">BanglaActivity</string>
+    <string name="take_pic">ছবি তুলো</string>
+    <string name="todo">todo</string>
+    <string name="Title_ofthe_text">সনাক্তকিত লেখার শিরোনাম দেন</string>
+    <string name="send_data">তথ্য রোবটে সংরক্ষণ কর</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="send">Send</string>
+    <string name="message">Message</string>
+    <string name="problem_subject">Problem Subject</string>
+    <string name="speak">কথা বল</string>
+    <string name="stop_speak">কথা বন্ধ কর</string>
+    <string name="selflearn_text">আমাকে কি শিখাতে চান? নিচের প্রথম বাটন দিয়ে \n আমাকে আগে প্রশ্ন শিখান এরপর দ্বিতীয় বাটন দিয়ে \n আমকে উত্তর শিখান।</string>
+    <string name="teach_question">প্রশ্ন শিখাও</string>
+    <string name="teach_answer">উত্তর শিখাও</string>
 </resources>

@@ -29,6 +29,8 @@ public class Register extends AppCompatActivity {
     private Button regbtn;
     private Button lgnbtn;
     private ProgressBar progressBar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +106,7 @@ public class Register extends AppCompatActivity {
 
 
         progressBar.setVisibility(View.VISIBLE);
+
         mAuth.createUserWithEmailAndPassword(user_email,user_pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -120,8 +123,8 @@ public class Register extends AppCompatActivity {
                                 Toast.makeText(Register.this,"User has been registered successfully! Check Email for Verfication",Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.GONE);
                                 currentUser.sendEmailVerification();
-
-                                startActivity(new Intent(Register.this, MainActivity.class));
+                                FirebaseAuth.getInstance().signOut();
+                                startActivity(new Intent(Register.this,MainActivity.class));
                             }
                             else {
                                 Toast.makeText(Register.this,"Failed to register! Try again!",Toast.LENGTH_LONG).show();

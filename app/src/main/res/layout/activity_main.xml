@@ -64,12 +64,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/progressBar"
-        android:text="Forget Password"
+        android:text="@string/forget_password"
         android:textSize="15sp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         />
 
     <Button
@@ -84,6 +84,7 @@
         android:textSize="15sp"
         android:textStyle="italic"
         android:layout_centerHorizontal="true"
+
          />
 
     <Button

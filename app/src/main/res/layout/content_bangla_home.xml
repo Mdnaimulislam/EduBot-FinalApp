@@ -17,8 +17,8 @@
         android:background="@drawable/style_toggle_button"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:textOff="কথা বল"
-        android:textOn="কথা বন্ধ কর"
+        android:textOff="@string/speak"
+        android:textOn="@string/stop_speak"
         android:textAllCaps="false"/>
 
 

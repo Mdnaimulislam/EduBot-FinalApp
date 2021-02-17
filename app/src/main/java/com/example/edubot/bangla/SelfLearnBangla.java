@@ -18,19 +18,15 @@ import android.widget.Button;
 import android.speech.tts.TextToSpeech;
 import android.widget.TextView;
 
+import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
-import com.google.android.material.badge.BadgeUtils;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -148,7 +144,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("মুক্তি");
+        toolbar.setTitle("রোবটকে শিখাও");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -186,25 +182,25 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
             startActivity(new Intent(this,BanglaActivity.class));
         }
         else if(id==R.id.nav_bangla_book){
+            startActivity(new Intent(this,BookActivityBangla.class));
 
         }
         else if(id==R.id.nav_bangla_learn){
-            startActivity(new Intent(this,SelfLearnBangla.class));
         }
         else if(id==R.id.nav_bangla_scan){
-
+            startActivity(new Intent(this, ScanActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_calculator){
-
+            startActivity(new Intent(this,MathActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_tutorial){
 
         }
         else if(id==R.id.nav_bangla_website){
-
+            startActivity(new Intent(this,WebBanglaActivity.class));
         }
         else if(id==R.id.nav_bangla_help){
-
+            startActivity(new Intent(this, HelpActivity.class));
         }
         else if(id==R.id.nav_bangla_logout){
             FirebaseAuth.getInstance().signOut();

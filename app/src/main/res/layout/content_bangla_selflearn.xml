@@ -5,23 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".bangla.SelfLearnBangla"
-    android:background="@drawable/bac">
+    >
 
     <TextView
         android:id="@+id/learn_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="আমাকে কি শিখাতে চান? নিচের প্রথম বাটন দিয়ে \n আমাকে আগে প্রশ্ন শিখান এরপর দ্বিতীয় বাটন দিয়ে \n আমকে উত্তর শিখান।"
+        android:text="@string/selflearn_text"
         android:layout_marginTop="170dp"
         android:textColor="@color/white"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/bangla_qlearn"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="প্রশ্ন শিখাও"
+        android:text="@string/teach_question"
         android:layout_below="@id/learn_msg"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
@@ -31,7 +31,7 @@
         android:id="@+id/bangla_alearn"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="উত্তর শিখাও"
+        android:text="@string/teach_answer"
         android:layout_below="@id/bangla_qlearn"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#388E3C"/>

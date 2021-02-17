@@ -7,32 +7,28 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.os.SystemClock;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-import com.example.edubot.Choose_Language;
+import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
-import com.google.android.material.chip.ChipGroup;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -69,12 +65,16 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
     private  int x;
     private  String question="";
     String Uid="";
+    private AudioManager mAudioManager;
+    private int mStreamVolume;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bangla);
+        //mute audio
+        mAudioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
         //database
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser=mAuth.getCurrentUser();
@@ -92,7 +92,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         //text to speech config
         TextToSpeech tts = new TextToSpeech(this, this);
         tts.setLanguage(Locale.forLanguageTag("bn-BD"));
-        tts.setPitch(0.8f);
+        tts.setPitch(1.5f);
         tts.setSpeechRate(1f);
 
         //Speech recognizer configure
@@ -107,7 +107,6 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         speechRecognizer.setRecognitionListener(new RecognitionListener() {
             @Override
             public void onReadyForSpeech(Bundle bundle) {
-
             }
 
             @Override
@@ -132,7 +131,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
 
             @Override
             public void onError(int i) {
-                    speechRecognizer.startListening(intentRecognizer);
+                speechRecognizer.startListening(intentRecognizer);
             }
 
             @Override
@@ -156,8 +155,6 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                     }
                                 speechRecognizer.startListening(intentRecognizer);
                                 }
-
-
                                 else if(finalInput.contains("সম্পর্কে বল")){
                                     try {
                                         Qanswer = QueryWiki(finalInput);
@@ -194,13 +191,14 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                 }
                                 speechRecognizer.startListening(intentRecognizer);
                             }
-                            else {
+
+                           /* else {
                                 tts.speak("দুঃখিত আমি এই প্রশ্ন এর উত্তর বলতে এখনও অক্ষম।আমাকে যদি শিখাতে চান তাহলে রোবটকে শিখাও অপশন এ যান। ধন্যবাদ।",TextToSpeech.QUEUE_FLUSH,null);
                                 while (tts.isSpeaking()){
 
                                 }
                                 speechRecognizer.startListening(intentRecognizer);
-                            }
+                            }*/
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
@@ -213,7 +211,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
 
             @Override
             public void onPartialResults(Bundle bundle) {
-                    speechRecognizer.startListening(intentRecognizer);
+
             }
 
             @Override
@@ -248,16 +246,20 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
                     speechRecognizer.startListening(intentRecognizer);
+                    mStreamVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
+                    mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,0,0);
                 }
                 else{
-                    //
+                    destory();
                 }
             }
         });
 
     }
 
-
+    public void destory(){
+        mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,mStreamVolume,0);
+    }
 
     @Override
     public void onBackPressed() {
@@ -278,25 +280,25 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         if(id==R.id.nav_bangla_home){
         }
         else if(id==R.id.nav_bangla_book){
-
+            startActivity(new Intent(this,BookActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_learn){
             startActivity(new Intent(this,SelfLearnBangla.class));
         }
         else if(id==R.id.nav_bangla_scan){
-
+            startActivity(new Intent(this, ScanActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_calculator){
-
+            startActivity(new Intent(this,MathActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_tutorial){
 
         }
         else if(id==R.id.nav_bangla_website){
-
+            startActivity(new Intent(this,WebBanglaActivity.class));
         }
         else if(id==R.id.nav_bangla_help){
-
+            startActivity(new Intent(this, HelpActivity.class));
         }
         else if(id==R.id.nav_bangla_logout){
             FirebaseAuth.getInstance().signOut();
