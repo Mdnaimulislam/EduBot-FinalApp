@@ -1,8 +1,11 @@
-package com.example.edubot.bangla;
+package com.example.edubot.english;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,28 +14,31 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.WebActivity;
+import com.example.edubot.bangla.BanglaActivity;
+import com.example.edubot.bangla.BookActivityBangla;
+import com.example.edubot.bangla.MathActivityBangla;
+import com.example.edubot.bangla.ScanActivityBangla;
+import com.example.edubot.bangla.SelfLearnBangla;
+import com.example.edubot.bangla.SubjectActivityBanglaClass_1;
+import com.example.edubot.bangla.SubjectActivityBanglaClass_2;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class BookActivityBangla extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class BookActivityEnglish extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Button class1;
     private Button class2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_bangla);
+        setContentView(R.layout.activity_book_english);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("বই");
+        toolbar.setTitle("Book");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -54,13 +60,13 @@ public class BookActivityBangla extends AppCompatActivity implements NavigationV
         class1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityBangla.this,SubjectActivityBanglaClass_1.class));
+                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_1.class));
             }
         });
         class2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityBangla.this,SubjectActivityBanglaClass_2.class));
+                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_2.class));
             }
         });
 
@@ -81,31 +87,31 @@ public class BookActivityBangla extends AppCompatActivity implements NavigationV
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if(id==R.id.nav_bangla_home){
-            startActivity(new Intent(this,BanglaActivity.class));
+        if(id==R.id.nav_english_home){
+            startActivity(new Intent(this, EnglishActivity.class));
         }
-        else if(id==R.id.nav_bangla_book){
+        else if(id==R.id.nav_english_book){
 
         }
-        else if(id==R.id.nav_bangla_learn){
-            startActivity(new Intent(this,SelfLearnBangla.class));
+        else if(id==R.id.nav_english_learn){
+            startActivity(new Intent(this, SelfLearnEnglish.class));
         }
-        else if(id==R.id.nav_bangla_scan){
-            startActivity(new Intent(this, ScanActivityBangla.class));
+        else if(id==R.id.nav_english_scan){
+            startActivity(new Intent(this, ScanActivityEnglish.class));
         }
-        else if(id==R.id.nav_bangla_calculator){
-            startActivity(new Intent(this,MathActivityBangla.class));
+        else if(id==R.id.nav_english_calculator){
+            startActivity(new Intent(this, MathActivityEnglish.class));
         }
-        else if(id==R.id.nav_bangla_tutorial){
+        else if(id==R.id.nav_english_tutorial){
 
         }
-        else if(id==R.id.nav_bangla_website){
+        else if(id==R.id.nav_english_website){
             startActivity(new Intent(this, WebActivity.class));
         }
-        else if(id==R.id.nav_bangla_help){
+        else if(id==R.id.nav_english_help){
             startActivity(new Intent(this, HelpActivity.class));
         }
-        else if(id==R.id.nav_bangla_logout){
+        else if(id==R.id.nav_english_logout){
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(this, MainActivity.class));
         }
@@ -115,5 +121,4 @@ public class BookActivityBangla extends AppCompatActivity implements NavigationV
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

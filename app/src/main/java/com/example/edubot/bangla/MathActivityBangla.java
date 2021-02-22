@@ -16,8 +16,6 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +23,7 @@ import android.widget.Toast;
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
+import com.example.edubot.WebActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -263,7 +262,7 @@ public class MathActivityBangla extends AppCompatActivity implements NavigationV
 
         }
         else if(id==R.id.nav_bangla_website){
-            startActivity(new Intent(this,WebBanglaActivity.class));
+            startActivity(new Intent(this, WebActivity.class));
         }
         else if(id==R.id.nav_bangla_help){
             startActivity(new Intent(this, HelpActivity.class));

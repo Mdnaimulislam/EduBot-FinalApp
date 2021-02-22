@@ -37,4 +37,7 @@
     <string name="selflearn_text">আমাকে কি শিখাতে চান? নিচের প্রথম বাটন দিয়ে \n আমাকে আগে প্রশ্ন শিখান এরপর দ্বিতীয় বাটন দিয়ে \n আমকে উত্তর শিখান।</string>
     <string name="teach_question">প্রশ্ন শিখাও</string>
     <string name="teach_answer">উত্তর শিখাও</string>
+    <string name="start_talking">Start Talking</string>
+    <string name="stop_talking">Stop Talking</string>
+    <string name="mukti">MUKTI</string>
 </resources>

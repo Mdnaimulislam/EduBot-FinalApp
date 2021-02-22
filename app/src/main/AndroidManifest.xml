@@ -23,7 +23,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EduBot">
-        <activity android:name=".bangla.BanglaChapterClass1ActivityBangla"></activity>
+        <activity android:name=".english.SelfLearnEnglish"></activity>
+        <activity android:name=".english.ScanActivityEnglish" />
+        <activity android:name=".english.MathActivityEnglish" />
+        <activity android:name=".english.BookActivityEnglish" />
+        <activity android:name=".bangla.BanglaChapterClass1ActivityBangla" />
         <activity android:name=".bangla.SubjectActivityBanglaClass_2" />
         <activity android:name=".bangla.SubjectActivityBanglaClass_1" />
         <activity android:name=".bangla.BookActivityBangla" />
@@ -33,13 +37,13 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".bangla.ScanActivityBangla" />
         <activity android:name=".HelpActivity" />
-        <activity android:name=".bangla.WebBanglaActivity" />
+        <activity android:name=".WebActivity" />
         <activity android:name=".bangla.SelfLearnBangla" />
         <activity
             android:name=".bangla.BanglaActivity"
             android:label="@string/title_activity_bangla"
             android:theme="@style/Theme.EduBot.NoActionBar" />
-        <activity android:name=".english.EnglishMain" />
+        <activity android:name=".english.EnglishActivity" />
         <activity android:name=".Forget_Password" />
         <activity android:name=".Choose_Language" />
         <activity android:name=".Register" />

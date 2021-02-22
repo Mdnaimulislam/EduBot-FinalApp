@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".english.EnglishActivity"
+    tools:showIn="@layout/app_bar_english_home"
+    android:background="#08655A"
+    >
+    <ToggleButton
+        android:id="@+id/english_talk_btn"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/style_toggle_button"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textOff="@string/start_talking"
+        android:textOn="@string/stop_talking"
+        android:textAllCaps="false"/>
+
+
+</RelativeLayout>

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -143,7 +144,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-1").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -204,55 +205,78 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_19.setVisibility(View.GONE);
                 chapter2_1image.setVisibility(View.VISIBLE);
 
+
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-2_1").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-2_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
+
                         chapter2_1image.setVisibility(View.GONE);
                         chapter2_2image.setVisibility(View.VISIBLE);
-                        String answer2=(String) snapshot.child("Subjects").child("Bangla").child("chapter-2_2").getValue();
-                        tts.speak(answer2,TextToSpeech.QUEUE_FLUSH,null);
-                        while (tts.isSpeaking()){
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-2_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
-                        }
-                        chapter2_2image.setVisibility(View.GONE);
-                        chapter2_3image.setVisibility(View.VISIBLE);
-                        String answer3=(String) snapshot.child("Subjects").child("Bangla").child("chapter-2_3").getValue();
-                        tts.speak(answer3,TextToSpeech.QUEUE_FLUSH,null);
-                        while (tts.isSpeaking()){
+                                }
 
-                        }
-                        chapter2_3image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
-                        chapter_18.setVisibility(View.VISIBLE);
-                        chapter_19.setVisibility(View.VISIBLE);
+                                chapter2_2image.setVisibility(View.GONE);
+                                chapter2_3image.setVisibility(View.VISIBLE);
+                                chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-2_3").getValue();
+                                        tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                        while (tts.isSpeaking()){
+
+                                        }
+                                        chapter2_3image.setVisibility(View.GONE);
+                                        chapter_1.setVisibility(View.VISIBLE);
+                                        chapter_2.setVisibility(View.VISIBLE);
+                                        chapter_3.setVisibility(View.VISIBLE);
+                                        chapter_4.setVisibility(View.VISIBLE);
+                                        chapter_5.setVisibility(View.VISIBLE);
+                                        chapter_6.setVisibility(View.VISIBLE);
+                                        chapter_7.setVisibility(View.VISIBLE);
+                                        chapter_8.setVisibility(View.VISIBLE);
+                                        chapter_9.setVisibility(View.VISIBLE);
+                                        chapter_10.setVisibility(View.VISIBLE);
+                                        chapter_11.setVisibility(View.VISIBLE);
+                                        chapter_12.setVisibility(View.VISIBLE);
+                                        chapter_13.setVisibility(View.VISIBLE);
+                                        chapter_14.setVisibility(View.VISIBLE);
+                                        chapter_15.setVisibility(View.VISIBLE);
+                                        chapter_16.setVisibility(View.VISIBLE);
+                                        chapter_17.setVisibility(View.VISIBLE);
+                                        chapter_18.setVisibility(View.VISIBLE);
+                                        chapter_19.setVisibility(View.VISIBLE);
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
                     }
                 });
+
 
             }
         });
@@ -283,7 +307,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-3").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-3").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -345,7 +369,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-4").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-4").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -407,7 +431,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-5").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-5").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -469,7 +493,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-6").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-6").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -531,7 +555,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-7").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-7").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -593,7 +617,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-8").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-8").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -655,7 +679,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-9").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-9").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -717,7 +741,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-10").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-10").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -779,7 +803,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-11").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-11").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -841,7 +865,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-12").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-12").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -903,7 +927,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-13").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-13").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -965,7 +989,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-14").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-14").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1027,7 +1051,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-15").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-15").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1089,7 +1113,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-16").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-16").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1151,7 +1175,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-17").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-17").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1213,7 +1237,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-18").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-18").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1275,7 +1299,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("Bangla").child("chapter-19").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-19").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 

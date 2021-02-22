@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_english_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_english_book"
+            android:icon="@drawable/ic_book"
+            android:title="Books" />
+        <item
+            android:id="@+id/nav_english_learn"
+            android:icon="@drawable/ic_selflearn"
+            android:title="Teach Robot" />
+        <item
+            android:id="@+id/nav_english_scan"
+            android:icon="@drawable/ic_scan"
+            android:title="Scan Books" />
+        <item
+            android:id="@+id/nav_english_calculator"
+            android:icon="@drawable/ic_calculator"
+            android:title="Image Calculator" />
+        <item
+            android:id="@+id/nav_english_tutorial"
+            android:icon="@drawable/ic_tutorial"
+            android:title="Application Guidlines" />
+        <item
+            android:id="@+id/nav_english_website"
+            android:icon="@drawable/ic_website"
+            android:title="Robotech Valley Website" />
+        <item
+            android:id="@+id/nav_english_help"
+            android:icon="@drawable/ic_help"
+            android:title="Help" />
+        <item
+            android:id="@+id/nav_english_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
+    </group>
+</menu>

@@ -1,4 +1,4 @@
-package com.example.edubot.bangla;
+package com.example.edubot.english;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,11 @@ import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.WebActivity;
+import com.example.edubot.bangla.BanglaActivity;
+import com.example.edubot.bangla.BookActivityBangla;
+import com.example.edubot.bangla.MathActivityBangla;
+import com.example.edubot.bangla.ScanActivityBangla;
+import com.example.edubot.bangla.SelfLearnBangla;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -36,14 +42,13 @@ import com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptio
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 import com.theartofdev.edmodo.cropper.CropImage;
-import android.speech.tts.TextToSpeech;
 
 import java.io.IOException;
 import java.util.Arrays;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ScanActivityBangla extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ScanActivityEnglish extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
     private ImageView imageView;
     private TextView textView;
     private EditText titleText;
@@ -51,13 +56,12 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
     private String s;
     private Uri mImageuri;
     private TextToSpeech tts;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan);
+        setContentView(R.layout.activity_scan_english);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("ছবি তুলে বই পড়");
+        toolbar.setTitle("Detect Book Text");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -87,7 +91,7 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
     }
     public void doProcess(View view) {
         //open the camera => create an Intent object
-        CropImage.activity().start(ScanActivityBangla.this);
+        CropImage.activity().start(ScanActivityEnglish.this);
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -104,7 +108,7 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
                 //1. create a FirebaseVisionImage object from a Bitmap object
                 FirebaseVisionImage firebaseVisionImage = null;
                 try {
-                    firebaseVisionImage = FirebaseVisionImage.fromFilePath(ScanActivityBangla.this,mImageuri);
+                    firebaseVisionImage = FirebaseVisionImage.fromFilePath(ScanActivityEnglish.this,mImageuri);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -112,7 +116,7 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
                 FirebaseVision firebaseVision = FirebaseVision.getInstance();
                 //3. Create an instance of FirebaseVisionTextRecognizer
                 FirebaseVisionCloudTextRecognizerOptions options = new FirebaseVisionCloudTextRecognizerOptions.Builder()
-                        .setLanguageHints(Arrays.asList("bn"))
+                        .setLanguageHints(Arrays.asList("en"))
                         .build();
 
                 FirebaseVisionTextRecognizer firebaseVisionTextRecognizer = firebaseVision.getCloudTextRecognizer(options);
@@ -161,32 +165,31 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if(id==R.id.nav_bangla_home){
-            startActivity(new Intent(this,BanglaActivity.class));
+        if(id==R.id.nav_english_home){
+            startActivity(new Intent(this, EnglishActivity.class));
         }
-        else if(id==R.id.nav_bangla_book){
-            startActivity(new Intent(this,BookActivityBangla.class));
+        else if(id==R.id.nav_english_book){
+            startActivity(new Intent(this, BookActivityEnglish.class));
+        }
+        else if(id==R.id.nav_english_learn){
+            startActivity(new Intent(this, SelfLearnEnglish.class));
+        }
+        else if(id==R.id.nav_english_scan){
 
         }
-        else if(id==R.id.nav_bangla_learn){
-            startActivity(new Intent(this,SelfLearnBangla.class));
+        else if(id==R.id.nav_english_calculator){
+            startActivity(new Intent(this, MathActivityEnglish.class));
         }
-        else if(id==R.id.nav_bangla_scan){
+        else if(id==R.id.nav_english_tutorial){
 
         }
-        else if(id==R.id.nav_bangla_calculator){
-            startActivity(new Intent(this,MathActivityBangla.class));
-        }
-        else if(id==R.id.nav_bangla_tutorial){
-
-        }
-        else if(id==R.id.nav_bangla_website){
+        else if(id==R.id.nav_english_website){
             startActivity(new Intent(this, WebActivity.class));
         }
-        else if(id==R.id.nav_bangla_help){
+        else if(id==R.id.nav_english_help){
             startActivity(new Intent(this, HelpActivity.class));
         }
-        else if(id==R.id.nav_bangla_logout){
+        else if(id==R.id.nav_english_logout){
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(this, MainActivity.class));
         }

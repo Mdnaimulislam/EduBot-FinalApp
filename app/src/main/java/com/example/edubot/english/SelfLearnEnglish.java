@@ -1,4 +1,4 @@
-package com.example.edubot.bangla;
+package com.example.edubot.english;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,16 +12,20 @@ import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.speech.tts.TextToSpeech;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.speech.tts.TextToSpeech;
 import android.widget.TextView;
 
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.WebActivity;
+import com.example.edubot.bangla.BanglaActivity;
+import com.example.edubot.bangla.BookActivityBangla;
+import com.example.edubot.bangla.MathActivityBangla;
+import com.example.edubot.bangla.ScanActivityBangla;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,7 +37,7 @@ import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class SelfLearnBangla extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,TextToSpeech.OnInitListener {
+public class SelfLearnEnglish extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, TextToSpeech.OnInitListener {
     private Button qlearnbutton;
     private Button aleanButton;
     private  int x=0;
@@ -42,12 +46,10 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
     private Intent intentRecognizer;
     private FirebaseAuth mAuth;
     String Uid="";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_self_learn_bangla);
-
+        setContentView(R.layout.activity_self_learn_english);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser=mAuth.getCurrentUser();
         Uid=currentUser.getUid();
@@ -55,7 +57,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
 
         //text to speech config
         TextToSpeech tts = new TextToSpeech(this, this);
-        tts.setLanguage(Locale.forLanguageTag("bn-BD"));
+        tts.setLanguage(Locale.forLanguageTag("en-US"));
         tts.setPitch(0.8f);
         tts.setSpeechRate(1f);
 
@@ -65,7 +67,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
             @Override
             public void onClick(View view) {
 
-                tts.speak("আমকে প্রশ্নটি শিখান",TextToSpeech.QUEUE_FLUSH,null);
+                tts.speak("Learn me the Question",TextToSpeech.QUEUE_FLUSH,null);
                 while (tts.isSpeaking()){
 
                 }
@@ -76,12 +78,12 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
             @Override
             public void onClick(View view) {
                 if(x!=1){
-                    tts.speak("আপনি আমাকে প্রশ্ন শিখান্নি। আমকে আগে প্রশ্নটি শিখান",TextToSpeech.QUEUE_FLUSH,null);
+                    tts.speak("You didnt input question!Please input the question first.",TextToSpeech.QUEUE_FLUSH,null);
                     while (tts.isSpeaking()){
 
                     }
                 }else {
-                    tts.speak("আমকে প্রশ্নের উত্তরটি শিখান", TextToSpeech.QUEUE_FLUSH, null);
+                    tts.speak("Teach me the questions answer", TextToSpeech.QUEUE_FLUSH, null);
                     while (tts.isSpeaking()) {
 
                     }
@@ -93,9 +95,9 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
 
 
         intentRecognizer = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "bn-BD");
-        intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "bn-BD");
-        intentRecognizer.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, "bn-BD");
+        intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en-US");
+        intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "en-US");
+        intentRecognizer.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, "en-US");
         intentRecognizer.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName());
         intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
 
@@ -145,7 +147,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("রোবটকে শিখাও");
+        toolbar.setTitle("Learn Robot");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -179,31 +181,31 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if(id==R.id.nav_bangla_home){
-            startActivity(new Intent(this,BanglaActivity.class));
+        if(id==R.id.nav_english_home){
+            startActivity(new Intent(this, EnglishActivity.class));
         }
-        else if(id==R.id.nav_bangla_book){
-            startActivity(new Intent(this,BookActivityBangla.class));
+        else if(id==R.id.nav_english_book){
+            startActivity(new Intent(this, BookActivityEnglish.class));
+        }
+        else if(id==R.id.nav_english_learn){
 
         }
-        else if(id==R.id.nav_bangla_learn){
+        else if(id==R.id.nav_english_scan){
+            startActivity(new Intent(this, ScanActivityEnglish.class));
         }
-        else if(id==R.id.nav_bangla_scan){
-            startActivity(new Intent(this, ScanActivityBangla.class));
+        else if(id==R.id.nav_english_calculator){
+            startActivity(new Intent(this, MathActivityEnglish.class));
         }
-        else if(id==R.id.nav_bangla_calculator){
-            startActivity(new Intent(this,MathActivityBangla.class));
-        }
-        else if(id==R.id.nav_bangla_tutorial){
+        else if(id==R.id.nav_english_tutorial){
 
         }
-        else if(id==R.id.nav_bangla_website){
+        else if(id==R.id.nav_english_website){
             startActivity(new Intent(this, WebActivity.class));
         }
-        else if(id==R.id.nav_bangla_help){
+        else if(id==R.id.nav_english_help){
             startActivity(new Intent(this, HelpActivity.class));
         }
-        else if(id==R.id.nav_bangla_logout){
+        else if(id==R.id.nav_english_logout){
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(this, MainActivity.class));
         }
@@ -217,5 +219,4 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
     @Override
     public void onInit(int i) {
     }
-
 }

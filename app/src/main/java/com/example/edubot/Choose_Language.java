@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.edubot.bangla.BanglaActivity;
-import com.example.edubot.english.EnglishMain;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.edubot.english.EnglishActivity;
 
 public class Choose_Language extends AppCompatActivity {
     private Button logout_btn;
@@ -27,7 +26,7 @@ public class Choose_Language extends AppCompatActivity {
         english_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Choose_Language.this, EnglishMain.class));
+                startActivity(new Intent(Choose_Language.this, EnglishActivity.class));
             }
         });
 

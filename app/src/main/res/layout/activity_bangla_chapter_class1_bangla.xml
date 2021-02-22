@@ -171,7 +171,7 @@
         android:layout_marginRight="5dp"
         android:backgroundTint="#0097A7"
         android:textColor="@color/black"
-        android:text="প্রথম অধ্যায়ঃ আমরা কি কি কাজ করি।"
+        android:text="পাঠ-১ঃ আমরা কি কি কাজ করি।"
         android:textSize="20dp"
         android:visibility="visible"/>
     <Button
@@ -183,8 +183,8 @@
         android:layout_marginRight="5dp"
         android:backgroundTint="#FBC02D"
         android:textColor="@color/black"
-        android:text="দ্বিতীয় অধ্যায়"
-        android:textSize="30dp"
+        android:text="পাঠ-২ঃ কাক ও কলসি"
+        android:textSize="20dp"
         android:visibility="visible"/>
     <Button
         android:id="@+id/chapter_3"
@@ -194,8 +194,8 @@
         android:layout_marginRight="5dp"
         android:backgroundTint="#6B79D1"
         android:textColor="@color/black"
-        android:text="তৃতীয় অধ্যায়"
-        android:textSize="30dp"
+        android:text="পাঠ-৩ঃ স্বরবর্ণ"
+        android:textSize="20dp"
         android:layout_below="@id/chapter_2"
         android:visibility="visible"/>
     <Button
@@ -206,8 +206,8 @@
         android:layout_marginRight="5dp"
         android:backgroundTint="#D32F2F"
         android:textColor="@color/black"
-        android:text="চতুর্থ অধ্যায়"
-        android:textSize="30dp"
+        android:text="পাঠ-৪ঃ ইতল বিতল"
+        android:textSize="20dp"
         android:layout_below="@id/chapter_3"
         android:visibility="visible"/>
     <Button
@@ -218,8 +218,8 @@
         android:layout_marginRight="5dp"
         android:backgroundTint="#AFB42B"
         android:textColor="@color/black"
-        android:text="পঞ্চম অধ্যায়"
-        android:textSize="30dp"
+        android:text="পাঠ-৫ঃ বাক বাকুম পায়রা"
+        android:textSize="20dp"
         android:layout_below="@+id/chapter_4"
         android:visibility="visible"/>
         <Button
@@ -228,10 +228,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#512DA8"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-৬ঃ হনহন পনপন"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_5"
             android:visibility="visible"/>
         <Button
@@ -240,10 +240,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#E64A19"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-৭ঃব্যঞ্জনবর্ণ"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_6"
             android:visibility="visible"/>
         <Button
@@ -252,10 +252,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#1976D2"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-৮ঃমামার বাড়ি"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_7"
             android:visibility="visible"/>
         <Button
@@ -264,10 +264,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#0097A7"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-৯ঃভোর হোল"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_8"
             android:visibility="visible"/>
         <Button
@@ -276,10 +276,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#00796B"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১০ঃ শুভ ও দাদিমা"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_9"
             android:visibility="visible"/>
         <Button
@@ -288,10 +288,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#C2185B"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১১ঃ রুবির বাগান"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_10"
             android:visibility="visible"/>
         <Button
@@ -300,10 +300,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#303F9F"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১২ঃ মায়ের ভালবাসা"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_11"
             android:visibility="visible"/>
         <Button
@@ -312,10 +312,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#FBC02D"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১৩ঃ মুমুর সাত দিন"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_12"
             android:visibility="visible"/>
         <Button
@@ -324,10 +324,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#388E3C"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১৪ঃ পিঁপড়ে ও ঘুঘু"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_13"
             android:visibility="visible"/>
         <Button
@@ -336,10 +336,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#CC1A7B"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১৫ঃ গাছ লাগানো"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_14"
             android:visibility="visible"/>
         <Button
@@ -348,10 +348,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#6A6A5E"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১৬ঃ আমাদের দেশ"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_15"
             android:visibility="visible"/>
         <Button
@@ -362,8 +362,8 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#AFB42B"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১৭ঃ ছুটি"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_16"
             android:visibility="visible"/>
         <Button
@@ -372,10 +372,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#D32F2F"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১৮ঃ মুক্তিযোদ্ধাদের কথা"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_17"
             android:visibility="visible"/>
         <Button
@@ -384,10 +384,10 @@
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:backgroundTint="#AFB42B"
+            android:backgroundTint="#00796B"
             android:textColor="@color/black"
-            android:text="পঞ্চম অধ্যায়"
-            android:textSize="30dp"
+            android:text="পাঠ-১৯ঃ শব্দ বলার খেলা"
+            android:textSize="20dp"
             android:layout_below="@+id/chapter_18"
             android:visibility="visible"/>
 

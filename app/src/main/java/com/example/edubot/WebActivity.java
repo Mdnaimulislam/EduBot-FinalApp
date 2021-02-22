@@ -11,37 +11,38 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.example.edubot.bangla.BanglaActivity;
 import com.example.edubot.bangla.BookActivityBangla;
 import com.example.edubot.bangla.MathActivityBangla;
 import com.example.edubot.bangla.ScanActivityBangla;
+import com.example.edubot.bangla.SelfLearnBangla;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class HelpActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private FirebaseAuth mAuth;
-    private EditText problem_subject;
-    private EditText problem_msg;
-    private Button send_email;
+public class WebActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private WebView webviewbangla;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+        setContentView(R.layout.activity_web);
+
+        webviewbangla=(WebView)findViewById(R.id.banglawebView);
+        webviewbangla.setWebViewClient(new WebViewClient());
+        webviewbangla.getSettings().setJavaScriptEnabled(true);
+        webviewbangla.getSettings().setDomStorageEnabled(true);
+        webviewbangla.setOverScrollMode(WebView.OVER_SCROLL_NEVER);
+        webviewbangla.loadUrl("https://store.robotechvalley.com");
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("হেল্প");
+        toolbar.setTitle("RoboTech Valley");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -56,61 +57,6 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
         View headerView = navigationView.getHeaderView(0);
         TextView userNameTextView = headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.profile_image);
-
-
-        problem_subject=(EditText)findViewById(R.id.email_subject);
-        problem_msg=(EditText)findViewById(R.id.email_message);
-        send_email=(Button)findViewById(R.id.send_btn);
-
-        send_email.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getInformation();
-            }
-        });
-
-    }
-
-    public void getInformation(){
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser=mAuth.getCurrentUser();
-        final String[] getphone = new String[1];
-
-
-        String email=currentUser.getEmail();
-        String Uid=currentUser.getUid();
-
-        DatabaseReference phone = FirebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("phone");
-        phone.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String subject=problem_subject.getText().toString().trim()+"\n"+email+"\n"+ snapshot.getValue();
-                String message=problem_msg.getText().toString().trim();
-                if(subject.isEmpty()){
-                    problem_subject.setError("Email is required!");
-                    problem_subject.requestFocus();
-                    return;
-                }
-                if(message.isEmpty()){
-                    problem_msg.setError("Email is required!");
-                    problem_msg.requestFocus();
-                    return;
-                }
-
-                Intent intent =new Intent(Intent.ACTION_SEND);
-                intent.setType("message/rfc822");
-                intent.setPackage("com.google.android.gm");
-                intent.putExtra(Intent.EXTRA_EMAIL,new String[]{"robotechvalley@gmail.com"});
-                intent.putExtra(Intent.EXTRA_SUBJECT,subject);
-                intent.putExtra(Intent.EXTRA_TEXT,message);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
-
     }
 
     @Override
@@ -136,6 +82,7 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else if(id==R.id.nav_bangla_learn){
+            startActivity(new Intent(this, SelfLearnBangla.class));
         }
         else if(id==R.id.nav_bangla_scan){
             startActivity(new Intent(this, ScanActivityBangla.class));
@@ -147,14 +94,15 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else if(id==R.id.nav_bangla_website){
-            startActivity(new Intent(this, WebActivity.class));
         }
         else if(id==R.id.nav_bangla_help){
+            startActivity(new Intent(this, HelpActivity.class));
         }
         else if(id==R.id.nav_bangla_logout){
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(this, MainActivity.class));
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
