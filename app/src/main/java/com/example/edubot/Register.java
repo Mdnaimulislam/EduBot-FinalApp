@@ -49,7 +49,8 @@ public class Register extends AppCompatActivity {
 
         regbtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 registerUser();
             }
         });
@@ -106,6 +107,8 @@ public class Register extends AppCompatActivity {
 
 
         progressBar.setVisibility(View.VISIBLE);
+
+
 
         mAuth.createUserWithEmailAndPassword(user_email,user_pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

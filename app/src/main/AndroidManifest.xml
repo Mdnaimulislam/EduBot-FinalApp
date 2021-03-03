@@ -23,7 +23,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EduBot">
-        <activity android:name=".english.SelfLearnEnglish"></activity>
+        <activity android:name=".BlutoothConnect" />
+        <activity android:name=".bangla.BanglaChapterClass2ActivityBangla" />
+        <activity android:name=".english.SelfLearnEnglish" />
         <activity android:name=".english.ScanActivityEnglish" />
         <activity android:name=".english.MathActivityEnglish" />
         <activity android:name=".english.BookActivityEnglish" />

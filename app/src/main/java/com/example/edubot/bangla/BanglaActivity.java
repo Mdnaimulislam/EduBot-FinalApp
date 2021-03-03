@@ -26,6 +26,7 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import com.example.edubot.Choose_Language;
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
@@ -62,12 +63,16 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
     ToggleButton talk;
     private SpeechRecognizer speechRecognizer;
     private Intent intentRecognizer;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();;
     private  int x;
     private  String question="";
-    String Uid="";
     private AudioManager mAudioManager;
     private int mStreamVolume;
+    TextToSpeech tts;
+
+    FirebaseUser currentUser=mAuth.getCurrentUser();
+    String Uid=currentUser.getUid();
+    Choose_Language b=new Choose_Language();
     DatabaseReference dbQuestions = FirebaseDatabase.getInstance().getReference().child("Constant Bangla Questions");
     DatabaseReference slQuestions = FirebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("Self Questions");
 
@@ -78,10 +83,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         setContentView(R.layout.activity_bangla);
         //mute audio
         mAudioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
-        //database
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser=mAuth.getCurrentUser();
-        Uid=currentUser.getUid();
+
 
         //permission
 
@@ -89,7 +91,11 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        //
+        //text to speech config
+        tts = new TextToSpeech(this, this);
+        tts.setLanguage(Locale.forLanguageTag("bn_BD"));
+        tts.setPitch(0.8f);
+        tts.setSpeechRate(1f);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("মুক্তি");
@@ -115,13 +121,13 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
                     setSpeechRecognizer();
-                    mStreamVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
-                    mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,0,0);
+                    //mStreamVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
+                    //mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,0,0);
                 }
                 else{
                     speechRecognizer.destroy();
                     SystemClock.sleep(700);
-                    mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,mStreamVolume,0);
+                    //mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,mStreamVolume,0);
                 }
             }
         });
@@ -129,11 +135,9 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
     }
 
     public void setSpeechRecognizer(){
-        //text to speech config
-        TextToSpeech tts = new TextToSpeech(this, this);
-        tts.setLanguage(Locale.forLanguageTag("bn-BD"));
-        tts.setPitch(1.5f);
-        tts.setSpeechRate(1f);
+
+
+
         //Speech recognizer configure
         intentRecognizer = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "bn-BD");
@@ -142,6 +146,8 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         intentRecognizer.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName());
         intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
+
+        speechRecognizer.startListening(intentRecognizer);
 
         speechRecognizer.setRecognitionListener(new RecognitionListener() {
             @Override
@@ -181,7 +187,14 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                     userVoice = store.get(0);
                     String finalInput = userVoice;
 
-
+                    try {
+                        b.intentAction(finalInput);
+                        if(b.check=="b"){
+                            speechRecognizer.startListening(intentRecognizer);
+                        }
+                   }catch (Exception e){
+                        e.printStackTrace();
+                   }
                     dbQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -189,8 +202,18 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                             String Qanswer = (String) snapshot.child(finalInput).getValue();
 
                             if (Qanswer != null) {
+                               try {
+                                    b.intentAction("A");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
                                 while (tts.isSpeaking()){
+                                }
+                               try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
                                 }
                                 speechRecognizer.startListening(intentRecognizer);
                             }
@@ -201,8 +224,18 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                     if (Qanswer.equals("E") || Qanswer.contains("}")) {
                                         speechRecognizer.startListening(intentRecognizer);
                                     } else {
+                                        try {
+                                            b.intentAction("A");
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
                                         tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
                                         while (tts.isSpeaking()){
+                                        }
+                                       try {
+                                           b.intentAction("B");
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
                                         }
                                         speechRecognizer.startListening(intentRecognizer);
                                     }
@@ -210,26 +243,29 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                     e.printStackTrace();
                                 }
                             }
-                        }
+                            else {
+                                slQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                                        String Qanswer = (String) snapshot.child(finalInput).getValue();
 
-                        }
-                    });
-
-                    slQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                            String Qanswer = (String) snapshot.child(finalInput).getValue();
-
-                            if (Qanswer != null) {
-                                tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
-                                while (tts.isSpeaking()){
-                                }
-                                speechRecognizer.startListening(intentRecognizer);
-                            }
+                                        if (Qanswer != null) {
+                                               try {
+                                                   b.intentAction("A");
+                                              } catch (Exception e) {
+                                                  e.printStackTrace();
+                                              }
+                                            tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
+                                            while (tts.isSpeaking()){
+                                            }
+                                             try {
+                                                 b.intentAction("B");
+                                             } catch (Exception e) {
+                                                   e.printStackTrace();
+                                              }
+                                            speechRecognizer.startListening(intentRecognizer);
+                                        }
 
                            /* else {
                                 tts.speak("দুঃখিত আমি এই প্রশ্ন এর উত্তর বলতে এখনও অক্ষম।আমাকে যদি শিখাতে চান তাহলে রোবটকে শিখাও অপশন এ যান। ধন্যবাদ।",TextToSpeech.QUEUE_FLUSH,null);
@@ -238,12 +274,22 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                 }
                                 speechRecognizer.startListening(intentRecognizer);
                             }*/
+                                    }
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+                            }
                         }
+
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
 
                         }
                     });
+
+
 
                 }
             }
@@ -258,7 +304,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
 
             }
         });
-        speechRecognizer.startListening(intentRecognizer);
+
     }
 
 

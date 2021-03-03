@@ -33,6 +33,7 @@ public class Forget_Password extends AppCompatActivity {
         resetpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 resetPassword();
             }
         });

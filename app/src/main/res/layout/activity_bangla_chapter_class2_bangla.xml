@@ -17,147 +17,197 @@
             android:id="@+id/chapter_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_1_bn_1"
+            android:background="@drawable/chapter_1_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_2_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_2_1_bn_1"
+            android:background="@drawable/chapter_2_1_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_2_2_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_2_2_bn_1"
+            android:background="@drawable/chapter_2_2_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_2_3_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_2_3_bn_1"
+            android:background="@drawable/chapter_2_3_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_3_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_3_bn_1"
+            android:background="@drawable/chapter_3_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_4_image"
+            android:id="@+id/chapter_4_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_4_bn_1"
+            android:background="@drawable/chapter_4_1_bn_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/chapter_4_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_4_2_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_5_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_5_bn_1"
+            android:background="@drawable/chapter_5_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_6_image"
+            android:id="@+id/chapter_6_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_6_bn_1"
+            android:background="@drawable/chapter_6_1_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_7_image"
+            android:id="@+id/chapter_6_2_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_7_bn_1"
+            android:background="@drawable/chapter_6_2_bn_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/chapter_7_1_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_7_1_bn_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/chapter_7_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_7_2_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_8_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_8_bn_1"
+            android:background="@drawable/chapter_8_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_9_image"
+            android:id="@+id/chapter_9_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_9_bn_1"
+            android:background="@drawable/chapter_9_1_bn_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/chapter_9_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_9_2_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_10_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_10_bn_1"
+            android:background="@drawable/chapter_10_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_11_image"
+            android:id="@+id/chapter_11_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_11_bn_1"
+            android:background="@drawable/chapter_11_1_bn_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/chapter_11_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_11_2_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_12_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_12_bn_1"
+            android:background="@drawable/chapter_12_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_13_image"
+            android:id="@+id/chapter_13_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_13_bn_1"
+            android:background="@drawable/chapter_13_1_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_14_image"
+            android:id="@+id/chapter_13_2_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_14_bn_1"
+            android:background="@drawable/chapter_13_2_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_15_image"
+            android:id="@+id/chapter_14_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_15_bn_1"
+            android:background="@drawable/chapter_14_1_bn_2"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/chapter_14_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_14_2_bn_2"
             android:visibility="gone"
             />
         <ImageView
-            android:id="@+id/chapter_16_image"
+            android:id="@+id/chapter_15_1_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_16_bn_1"
+            android:background="@drawable/chapter_15_1_bn_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/chapter_15_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_15_2_bn_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/chapter_16_1_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_16_1_bn_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/chapter_16_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/chapter_16_2_bn_2"
             android:visibility="gone"
             />
         <ImageView
             android:id="@+id/chapter_17_image"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:background="@drawable/chapter_17_bn_1"
-            android:visibility="gone"
-            />
-        <ImageView
-            android:id="@+id/chapter_18_image"
-            android:layout_width="match_parent"
-            android:layout_height="650dp"
-            android:background="@drawable/chapter_18_bn_1"
-            android:visibility="gone"
-            />
-        <ImageView
-            android:id="@+id/chapter_19_image"
-            android:layout_width="match_parent"
-            android:layout_height="650dp"
-            android:background="@drawable/chapter_19_bn_1"
+            android:background="@drawable/chapter_17_bn_2"
             android:visibility="gone"
             />
 
@@ -171,7 +221,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#0097A7"
             android:textColor="@color/black"
-            android:text="পাঠ-১ঃ আমরা কি কি কাজ করি।"
+            android:text="পাঠ-১ঃ পড়ি ও বলি।"
             android:textSize="20dp"
             android:visibility="visible"/>
         <Button
@@ -183,7 +233,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#FBC02D"
             android:textColor="@color/black"
-            android:text="পাঠ-২ঃ কাক ও কলসি"
+            android:text="পাঠ-২ঃ সুন্দরবন"
             android:textSize="20dp"
             android:visibility="visible"/>
         <Button
@@ -194,7 +244,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#6B79D1"
             android:textColor="@color/black"
-            android:text="পাঠ-৩ঃ স্বরবর্ণ"
+            android:text="পাঠ-৩ঃ আমাদের দেশ"
             android:textSize="20dp"
             android:layout_below="@id/chapter_2"
             android:visibility="visible"/>
@@ -206,7 +256,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#D32F2F"
             android:textColor="@color/black"
-            android:text="পাঠ-৪ঃ ইতল বিতল"
+            android:text="পাঠ-৪ঃ শীতের সকাল"
             android:textSize="20dp"
             android:layout_below="@id/chapter_3"
             android:visibility="visible"/>
@@ -218,7 +268,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#AFB42B"
             android:textColor="@color/black"
-            android:text="পাঠ-৫ঃ বাক বাকুম পায়রা"
+            android:text="পাঠ-৫ঃ আমি হব"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_4"
             android:visibility="visible"/>
@@ -230,7 +280,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#512DA8"
             android:textColor="@color/black"
-            android:text="পাঠ-৬ঃ হনহন পনপন"
+            android:text="পাঠ-৬ঃ জলপরি ও কাঠুরে"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_5"
             android:visibility="visible"/>
@@ -242,7 +292,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#E64A19"
             android:textColor="@color/black"
-            android:text="পাঠ-৭ঃব্যঞ্জনবর্ণ"
+            android:text="পাঠ-৭ঃ নানা রঙের ফুলফল"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_6"
             android:visibility="visible"/>
@@ -254,7 +304,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#1976D2"
             android:textColor="@color/black"
-            android:text="পাঠ-৮ঃমামার বাড়ি"
+            android:text="পাঠ-৮ঃ আমদের ছোট নদী"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_7"
             android:visibility="visible"/>
@@ -266,7 +316,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#0097A7"
             android:textColor="@color/black"
-            android:text="পাঠ-৯ঃভোর হোল"
+            android:text="পাঠ-৯ঃ দাদির হাতের মজার পিঠা"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_8"
             android:visibility="visible"/>
@@ -278,7 +328,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#00796B"
             android:textColor="@color/black"
-            android:text="পাঠ-১০ঃ শুভ ও দাদিমা"
+            android:text="পাঠ-১০ঃ ট্রেন"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_9"
             android:visibility="visible"/>
@@ -290,7 +340,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#C2185B"
             android:textColor="@color/black"
-            android:text="পাঠ-১১ঃ রুবির বাগান"
+            android:text="পাঠ-১১ঃ দুখুর ছেলেবেলা"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_10"
             android:visibility="visible"/>
@@ -302,7 +352,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#303F9F"
             android:textColor="@color/black"
-            android:text="পাঠ-১২ঃ মায়ের ভালবাসা"
+            android:text="পাঠ-১২ঃ প্রার্থনা"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_11"
             android:visibility="visible"/>
@@ -314,7 +364,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#FBC02D"
             android:textColor="@color/black"
-            android:text="পাঠ-১৩ঃ মুমুর সাত দিন"
+            android:text="পাঠ-১৩ঃ খামার বাড়ির পশুপাখি"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_12"
             android:visibility="visible"/>
@@ -326,7 +376,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#388E3C"
             android:textColor="@color/black"
-            android:text="পাঠ-১৪ঃ পিঁপড়ে ও ঘুঘু"
+            android:text="পাঠ-১৪ঃ ছয় ঋতুর দেশ"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_13"
             android:visibility="visible"/>
@@ -338,7 +388,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#CC1A7B"
             android:textColor="@color/black"
-            android:text="পাঠ-১৫ঃ গাছ লাগানো"
+            android:text="পাঠ-১৫ঃ মুক্তিযুদ্ধের একটি সোনালি পাতা"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_14"
             android:visibility="visible"/>
@@ -350,7 +400,7 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#6A6A5E"
             android:textColor="@color/black"
-            android:text="পাঠ-১৬ঃ আমাদের দেশ"
+            android:text="পাঠ-১৬ঃ কাজের আনন্দ"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_15"
             android:visibility="visible"/>
@@ -362,34 +412,11 @@
             android:layout_marginRight="5dp"
             android:backgroundTint="#AFB42B"
             android:textColor="@color/black"
-            android:text="পাঠ-১৭ঃ ছুটি"
+            android:text="পাঠ-১৭ঃ সবাই মিলে করি কাজ"
             android:textSize="20dp"
             android:layout_below="@+id/chapter_16"
             android:visibility="visible"/>
-        <Button
-            android:id="@+id/chapter_18"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:backgroundTint="#D32F2F"
-            android:textColor="@color/black"
-            android:text="পাঠ-১৮ঃ মুক্তিযোদ্ধাদের কথা"
-            android:textSize="20dp"
-            android:layout_below="@+id/chapter_17"
-            android:visibility="visible"/>
-        <Button
-            android:id="@+id/chapter_19"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:backgroundTint="#00796B"
-            android:textColor="@color/black"
-            android:text="পাঠ-১৯ঃ শব্দ বলার খেলা"
-            android:textSize="20dp"
-            android:layout_below="@+id/chapter_18"
-            android:visibility="visible"/>
+
 
     </RelativeLayout>
 

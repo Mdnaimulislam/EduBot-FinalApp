@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser=mAuth.getCurrentUser();
         if(currentUser!=null){
-            startActivity(new Intent(MainActivity.this,Choose_Language.class));
+            startActivity(new Intent(MainActivity.this,BlutoothConnect.class));
         }
 
 
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         lgnbtn=(Button)findViewById(R.id.login_btn);
         regbtn=(Button)findViewById(R.id.r_btn);
         progressBar=(ProgressBar)findViewById(R.id.progressBar);
-        mAuth=FirebaseAuth.getInstance();
         forgetpass=(TextView)findViewById(R.id.forgetpass);
 
         forgetpass.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     FirebaseUser user =FirebaseAuth.getInstance().getCurrentUser();
                     if(user.isEmailVerified()){
                         progressBar.setVisibility(View.GONE);
-                        startActivity(new Intent(MainActivity.this, Choose_Language.class));
+                        startActivity(new Intent(MainActivity.this,BlutoothConnect.class));
                     }
                     else {
                         Toast.makeText(MainActivity.this,"Check your email to verify account",Toast.LENGTH_LONG).show();
