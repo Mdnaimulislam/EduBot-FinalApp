@@ -13,6 +13,20 @@
         android:layout_height="650dp"
         android:background="@color/white"
         >
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.EduBot.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_back"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:popupTheme="@style/Theme.EduBot.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
         <ImageView
             android:id="@+id/chapter_1_image"
             android:layout_width="match_parent"
@@ -217,7 +231,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="5dp"
             android:backgroundTint="#0097A7"
             android:textColor="@color/black"

@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
+import com.example.edubot.english.EnglishActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -17,12 +20,19 @@ import java.util.List;
 import java.util.Set;
 
 public class BlutoothConnect extends AppCompatActivity {
-
-
+    private ImageButton reload;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blutooth_connect);
+        reload=(ImageButton)findViewById(R.id.reload);
+
+        reload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BlutoothConnect.this, BlutoothConnect.class));
+            }
+        });
         setupBluetoothConnection();
     }
 

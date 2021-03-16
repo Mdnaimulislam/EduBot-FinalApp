@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bangla.SubjectActivityBanglaClass_3"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.EduBot.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_back"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:popupTheme="@style/Theme.EduBot.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <Button
+        android:id="@+id/bangla_bn_3"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="#E64A19"
+        android:textColor="@color/black"
+        android:text="বাংলা"
+        android:textSize="50dp"/>
+
+    <Button
+        android:id="@+id/english_bn_3"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="130dp"
+        android:layout_below="@id/bangla_bn_3"
+        android:backgroundTint="#FFA000"
+        android:textColor="@color/black"
+        android:text="ইংরেজি"
+        android:textSize="50dp"/>
+    <Button
+        android:id="@+id/math_bn_3"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="130dp"
+        android:layout_below="@id/english_bn_3"
+        android:backgroundTint="#0097A7"
+        android:textColor="@color/black"
+        android:text="অংক"
+        android:textSize="50dp"/>
+
+</RelativeLayout>

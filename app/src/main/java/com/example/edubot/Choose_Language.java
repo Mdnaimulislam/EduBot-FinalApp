@@ -147,6 +147,13 @@ public class Choose_Language extends AppCompatActivity {
 
             } catch (IOException connectException) {
                 // Unable to connect; close the socket and return.
+
+
+                //Code to restrict user
+
+
+
+
                 try {
                     mmSocket.close();
                     Log.e("Status", "Cannot connect to device");

@@ -13,10 +13,19 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         android:visibility="visible">
+        <ImageButton
+            android:id="@+id/reload"
+            android:layout_width="20dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:icon="@drawable/ic_home"
+            android:backgroundTint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_reload"/>
 
         <TextView
             android:id="@+id/title_of_app"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="44dp"
             android:layout_gravity="center"
             android:fontFamily="@font/kalpurush"
@@ -26,6 +35,8 @@
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold" />
+
+
 
     </LinearLayout>
 

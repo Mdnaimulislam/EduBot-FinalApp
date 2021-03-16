@@ -23,6 +23,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EduBot">
+        <activity android:name=".bangla.BanglaChapterClass5ActivityBangla"></activity>
+        <activity android:name=".bangla.BanglaChapterClass4ActivityBangla" />
+        <activity android:name=".bangla.BanglaChapterClass3ActivityBangla" />
+        <activity android:name=".bangla.SubjectActivityBanglaClass_5" />
+        <activity android:name=".bangla.SubjectActivityBanglaClass_4" />
+        <activity android:name=".bangla.SubjectActivityBanglaClass_3" />
         <activity android:name=".BlutoothConnect" />
         <activity android:name=".bangla.BanglaChapterClass2ActivityBangla" />
         <activity android:name=".english.SelfLearnEnglish" />

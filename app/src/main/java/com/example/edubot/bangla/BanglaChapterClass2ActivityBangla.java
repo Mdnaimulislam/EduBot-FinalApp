@@ -2,7 +2,9 @@ package com.example.edubot.bangla;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -65,10 +67,20 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
     private ImageView chapter16_2image;
     private ImageView chapter17image;
     private TextToSpeech tts;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bangla_chapter_class2_bangla);
+
+        toolbar=(Toolbar)findViewById(R.id.toolbar_back);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BanglaChapterClass2ActivityBangla.this, BookActivityBangla.class));
+            }
+        });
 
         DatabaseReference chapter_answer = FirebaseDatabase.getInstance().getReference();
 
@@ -149,7 +161,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-1").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -212,7 +224,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-2_1").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-2_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -223,7 +235,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                         chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-2_2").getValue();
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-2_2").getValue();
                                 tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                                 while (tts.isSpeaking()){
 
@@ -234,7 +246,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-2_3").getValue();
+                                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-2_3").getValue();
                                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                                         while (tts.isSpeaking()){
 
@@ -257,7 +269,6 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                         chapter_15.setVisibility(View.VISIBLE);
                                         chapter_16.setVisibility(View.VISIBLE);
                                         chapter_17.setVisibility(View.VISIBLE);
-
                                     }
 
                                     @Override
@@ -308,7 +319,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-3").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-3").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -363,35 +374,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-                //chapter4image.setVisibility(View.VISIBLE);
+                chapter4_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-4").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-4_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                        //chapter4image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter4_1image.setVisibility(View.GONE);
+                        chapter4_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-4_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter4_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -428,7 +456,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-5").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-5").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -483,35 +511,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-               // chapter6image.setVisibility(View.VISIBLE);
+                chapter6_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-6").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-6_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                        //chapter6image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter6_1image.setVisibility(View.GONE);
+                        chapter6_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-6_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter6_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -543,35 +588,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-                //chapter7image.setVisibility(View.VISIBLE);
+                chapter7_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-7").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-7_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                       // chapter7image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter7_1image.setVisibility(View.GONE);
+                        chapter7_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-7_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter7_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -608,7 +670,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-8").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-8").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -663,35 +725,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-                //chapter9image.setVisibility(View.VISIBLE);
+                chapter9_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-9").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-9_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                       // chapter9image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter9_1image.setVisibility(View.GONE);
+                        chapter9_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-9_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter9_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -728,7 +807,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-10").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-10").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -783,35 +862,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-              //  chapter11image.setVisibility(View.VISIBLE);
+                chapter11_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-11").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-11_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                       // chapter11image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter11_1image.setVisibility(View.GONE);
+                        chapter11_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-11_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter11_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -848,7 +944,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-12").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-12").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -903,35 +999,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-                //chapter13image.setVisibility(View.VISIBLE);
+                chapter13_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-13").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-13_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                        //chapter13image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter13_1image.setVisibility(View.GONE);
+                        chapter13_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-13_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter13_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -963,35 +1076,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-                //chapter14image.setVisibility(View.VISIBLE);
+                chapter14_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-14").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-14_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                        //chapter14image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter14_1image.setVisibility(View.GONE);
+                        chapter14_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-14_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter14_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -1023,35 +1153,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-                //chapter15image.setVisibility(View.VISIBLE);
+                chapter15_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-15").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-15_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                        //chapter15image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter15_1image.setVisibility(View.GONE);
+                        chapter15_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-15_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter15_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -1083,35 +1230,52 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_16.setVisibility(View.GONE);
                 chapter_17.setVisibility(View.GONE);
 
-                //chapter16image.setVisibility(View.VISIBLE);
+                chapter16_1image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-16").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-16_1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
                         }
-                        //chapter16image.setVisibility(View.GONE);
-                        chapter_1.setVisibility(View.VISIBLE);
-                        chapter_2.setVisibility(View.VISIBLE);
-                        chapter_3.setVisibility(View.VISIBLE);
-                        chapter_4.setVisibility(View.VISIBLE);
-                        chapter_5.setVisibility(View.VISIBLE);
-                        chapter_6.setVisibility(View.VISIBLE);
-                        chapter_7.setVisibility(View.VISIBLE);
-                        chapter_8.setVisibility(View.VISIBLE);
-                        chapter_9.setVisibility(View.VISIBLE);
-                        chapter_10.setVisibility(View.VISIBLE);
-                        chapter_11.setVisibility(View.VISIBLE);
-                        chapter_12.setVisibility(View.VISIBLE);
-                        chapter_13.setVisibility(View.VISIBLE);
-                        chapter_14.setVisibility(View.VISIBLE);
-                        chapter_15.setVisibility(View.VISIBLE);
-                        chapter_16.setVisibility(View.VISIBLE);
-                        chapter_17.setVisibility(View.VISIBLE);
+                        chapter16_1image.setVisibility(View.GONE);
+                        chapter16_2image.setVisibility(View.VISIBLE);
+                        chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-16_2").getValue();
+                                tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
+                                while (tts.isSpeaking()){
 
+                                }
+                                chapter16_2image.setVisibility(View.GONE);
+                                chapter_1.setVisibility(View.VISIBLE);
+                                chapter_2.setVisibility(View.VISIBLE);
+                                chapter_3.setVisibility(View.VISIBLE);
+                                chapter_4.setVisibility(View.VISIBLE);
+                                chapter_5.setVisibility(View.VISIBLE);
+                                chapter_6.setVisibility(View.VISIBLE);
+                                chapter_7.setVisibility(View.VISIBLE);
+                                chapter_8.setVisibility(View.VISIBLE);
+                                chapter_9.setVisibility(View.VISIBLE);
+                                chapter_10.setVisibility(View.VISIBLE);
+                                chapter_11.setVisibility(View.VISIBLE);
+                                chapter_12.setVisibility(View.VISIBLE);
+                                chapter_13.setVisibility(View.VISIBLE);
+                                chapter_14.setVisibility(View.VISIBLE);
+                                chapter_15.setVisibility(View.VISIBLE);
+                                chapter_16.setVisibility(View.VISIBLE);
+                                chapter_17.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
 
                     @Override
@@ -1148,7 +1312,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-17").getValue();
+                        String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-17").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 

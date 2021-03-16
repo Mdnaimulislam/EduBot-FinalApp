@@ -27,6 +27,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class BookActivityBangla extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Button class1;
     private Button class2;
+    private Button class3;
+    private Button class4;
+    private Button class5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,9 @@ public class BookActivityBangla extends AppCompatActivity implements NavigationV
 
         class1=(Button)findViewById(R.id.class_1);
         class2=(Button)findViewById(R.id.class_2);
+        class3=(Button)findViewById(R.id.class_3);
+        class4=(Button)findViewById(R.id.class_4);
+        class5=(Button)findViewById(R.id.class_5);
 
         class1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +69,27 @@ public class BookActivityBangla extends AppCompatActivity implements NavigationV
                 startActivity(new Intent(BookActivityBangla.this,SubjectActivityBanglaClass_2.class));
             }
         });
+
+        class3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BookActivityBangla.this,SubjectActivityBanglaClass_3.class));
+            }
+        });
+        class4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BookActivityBangla.this,SubjectActivityBanglaClass_4.class));
+            }
+        });
+        class5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BookActivityBangla.this,SubjectActivityBanglaClass_5.class));
+            }
+        });
+
+
 
     }
 

@@ -35,7 +35,7 @@
     <string name="problem_subject">Problem Subject</string>
     <string name="speak">কথা বল</string>
     <string name="stop_speak">কথা বন্ধ কর</string>
-    <string name="selflearn_text">আমাকে কি শিখাতে চান? নিচের প্রথম বাটন দিয়ে \n আমাকে আগে প্রশ্ন শিখান এরপর দ্বিতীয় বাটন দিয়ে \n আমকে উত্তর শিখান।</string>
+    <string name="selflearn_text">আমাকে কি শিখাতে চান? নিচের প্রথম বাটন দিয়ে আমাকে আগে প্রশ্ন শিখান এরপর দ্বিতীয় বাটন দিয়ে আমকে উত্তর শিখান।</string>
     <string name="teach_question">প্রশ্ন শিখাও</string>
     <string name="teach_answer">উত্তর শিখাও</string>
     <string name="start_talking">Start Talking</string>

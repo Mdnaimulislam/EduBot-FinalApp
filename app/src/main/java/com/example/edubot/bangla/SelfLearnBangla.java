@@ -36,6 +36,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class SelfLearnBangla extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,TextToSpeech.OnInitListener {
     private Button qlearnbutton;
     private Button aleanButton;
+    private TextView show;
     private  int x=0;
     private  String question="";
     private SpeechRecognizer speechRecognizer;
@@ -61,6 +62,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
 
         qlearnbutton=(Button)findViewById(R.id.bangla_qlearn);
         aleanButton=(Button)findViewById(R.id.bangla_alearn);
+        show=(TextView)findViewById(R.id.show_learn_text);
         qlearnbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +72,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
 
                 }
                 x=1;speechRecognizer.startListening(intentRecognizer);
+
             }
         });
         aleanButton.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +84,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
 
                     }
                 }else {
-                    tts.speak("আমকে প্রশ্নের উত্তরটি শিখান", TextToSpeech.QUEUE_FLUSH, null);
+                    tts.speak("আমাকে প্রশ্নের উত্তরটি শিখান", TextToSpeech.QUEUE_FLUSH, null);
                     while (tts.isSpeaking()) {
 
                     }
@@ -128,12 +131,18 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
 
                     if (x == 1) {
                         question = userVoice;
+                        show.setText(userVoice);
+                        tts.speak("আপনার প্রশ্নটি শিক্তে সক্ষম হয়েছি",TextToSpeech.QUEUE_FLUSH,null);
+
                     }
 
                     //Input Questions Button Main result part
                     else if (x == 2) {
+                        show.setText(userVoice);
                         slQuestions.child(question).setValue(userVoice);
+                        tts.speak("আপনার উত্তরটি শিখতে সক্ষম হয়েছি",TextToSpeech.QUEUE_FLUSH,null);
                     }
+
                 }
 
             }

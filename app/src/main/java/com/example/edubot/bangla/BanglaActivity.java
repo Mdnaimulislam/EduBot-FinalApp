@@ -94,7 +94,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         //text to speech config
         tts = new TextToSpeech(this, this);
         tts.setLanguage(Locale.forLanguageTag("bn_BD"));
-        tts.setPitch(0.8f);
+        tts.setPitch(1.2f);
         tts.setSpeechRate(1f);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -121,12 +121,13 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
                     setSpeechRecognizer();
-                    //mStreamVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
+                   // mStreamVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
                     //mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,0,0);
                 }
                 else{
                     speechRecognizer.destroy();
                     SystemClock.sleep(700);
+
                     //mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,mStreamVolume,0);
                 }
             }
@@ -135,8 +136,6 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
     }
 
     public void setSpeechRecognizer(){
-
-
 
         //Speech recognizer configure
         intentRecognizer = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -152,6 +151,8 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
         speechRecognizer.setRecognitionListener(new RecognitionListener() {
             @Override
             public void onReadyForSpeech(Bundle bundle) {
+
+                talk.setText("Listening");
             }
 
             @Override
@@ -181,6 +182,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
 
             @Override
             public void onResults(Bundle bundle) {
+                talk.setText("Listening Succes");
                 ArrayList<String> store = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 String userVoice = "";
                 if (store != null) {
@@ -237,6 +239,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                         } catch (Exception e) {
                                             e.printStackTrace();
                                         }
+                                        SystemClock.sleep(900);
                                         speechRecognizer.startListening(intentRecognizer);
                                     }
                                 } catch (IOException e) {
@@ -256,6 +259,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                               } catch (Exception e) {
                                                   e.printStackTrace();
                                               }
+
                                             tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
                                             while (tts.isSpeaking()){
                                             }
@@ -264,16 +268,10 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                              } catch (Exception e) {
                                                    e.printStackTrace();
                                               }
+
                                             speechRecognizer.startListening(intentRecognizer);
                                         }
 
-                           /* else {
-                                tts.speak("দুঃখিত আমি এই প্রশ্ন এর উত্তর বলতে এখনও অক্ষম।আমাকে যদি শিখাতে চান তাহলে রোবটকে শিখাও অপশন এ যান। ধন্যবাদ।",TextToSpeech.QUEUE_FLUSH,null);
-                                while (tts.isSpeaking()){
-
-                                }
-                                speechRecognizer.startListening(intentRecognizer);
-                            }*/
                                     }
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {

@@ -2,7 +2,9 @@ package com.example.edubot.bangla;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -62,6 +64,9 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
     private ImageView chapter18image;
     private ImageView chapter19image;
     private TextToSpeech tts;
+    private Button stop;
+    private Toolbar toolbar;
+    int x=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +74,15 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
         setContentView(R.layout.activity_bangla_chapter_class1_bangla);
 
         DatabaseReference chapter_answer = FirebaseDatabase.getInstance().getReference();
+        toolbar=(Toolbar)findViewById(R.id.toolbar_back);
+        stop=(Button)findViewById(R.id.stop);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BanglaChapterClass1ActivityBangla.this, BookActivityBangla.class));
+            }
+        });
 
         chapter1image=(ImageView)findViewById(R.id.chapter_1_image);
         chapter2_1image=(ImageView)findViewById(R.id.chapter_2_1_image);
@@ -116,6 +130,15 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
         tts.setSpeechRate(.7f);
 
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tts.stop();
+                x=1;
+                startActivity(new Intent(BanglaChapterClass1ActivityBangla.this,BanglaChapterClass1ActivityBangla.class));
+            }
+        });
+
 
         chapter_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,6 +163,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
                 chapter1image.setVisibility(View.VISIBLE);
+                stop.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -147,7 +171,9 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                         String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
-
+                            if(x==1){
+                                tts.stop();
+                            }
                         }
                         chapter1image.setVisibility(View.GONE);
                         chapter_1.setVisibility(View.VISIBLE);
