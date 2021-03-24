@@ -25,6 +25,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 app:navigationIcon="?attr/homeAsUpIndicator"
+                android:visibility="visible"
                 app:popupTheme="@style/Theme.EduBot.PopupOverlay" />
 
         </com.google.android.material.appbar.AppBarLayout>

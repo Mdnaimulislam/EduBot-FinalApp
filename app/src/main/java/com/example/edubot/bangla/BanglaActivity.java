@@ -27,6 +27,7 @@ import android.widget.ToggleButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import com.example.edubot.Choose_Language;
+import com.example.edubot.GuidlineActivity;
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
@@ -54,6 +55,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.stream.Collectors;
+import java.text.DecimalFormat;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -69,6 +71,8 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
     private AudioManager mAudioManager;
     private int mStreamVolume;
     TextToSpeech tts;
+    String finalInput;
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
 
     FirebaseUser currentUser=mAuth.getCurrentUser();
     String Uid=currentUser.getUid();
@@ -152,7 +156,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
             @Override
             public void onReadyForSpeech(Bundle bundle) {
 
-                talk.setText("Listening");
+                talk.setText("শুনছি");
             }
 
             @Override
@@ -182,12 +186,12 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
 
             @Override
             public void onResults(Bundle bundle) {
-                talk.setText("Listening Succes");
+                talk.setText("শুনতে সক্ষম হয়েছি");
                 ArrayList<String> store = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 String userVoice = "";
                 if (store != null) {
                     userVoice = store.get(0);
-                    String finalInput = userVoice;
+                    finalInput = userVoice;
 
                     try {
                         b.intentAction(finalInput);
@@ -197,6 +201,51 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                    }catch (Exception e){
                         e.printStackTrace();
                    }
+                    try {
+                        if (finalInput.contains("যোগ")) {
+                            String[] arrofstr = userVoice.split(" ");
+                            System.out.println(getDoubleNumberFromText(arrofstr[0]));
+                            System.out.println(getDoubleNumberFromText(arrofstr[3]));
+                            tts.speak(String.valueOf(getDoubleNumberFromText(arrofstr[0]) + getDoubleNumberFromText(arrofstr[3])), TextToSpeech.QUEUE_FLUSH, null);
+                            while (tts.isSpeaking()) {
+                            }
+                            finalInput = "ss";
+                            speechRecognizer.startListening(intentRecognizer);
+                        } else if (finalInput.contains("বিয়োগ")) {
+                            String[] arrofstr = userVoice.split(" ");
+                            System.out.println(getDoubleNumberFromText(arrofstr[0]));
+                            System.out.println(getDoubleNumberFromText(arrofstr[3]));
+                            tts.speak(String.valueOf(getDoubleNumberFromText(arrofstr[0]) - getDoubleNumberFromText(arrofstr[3])), TextToSpeech.QUEUE_FLUSH, null);
+                            while (tts.isSpeaking()) {
+                            }
+                            finalInput = "ss";
+                            speechRecognizer.startListening(intentRecognizer);
+                        } else if (finalInput.contains("গুন") || finalInput.contains("গুণ")) {
+                            String[] arrofstr = userVoice.split(" ");
+                            System.out.println(getDoubleNumberFromText(arrofstr[0]));
+                            System.out.println(getDoubleNumberFromText(arrofstr[3]));
+                            tts.speak(String.valueOf(getDoubleNumberFromText(arrofstr[0]) * getDoubleNumberFromText(arrofstr[3])), TextToSpeech.QUEUE_FLUSH, null);
+                            while (tts.isSpeaking()) {
+                            }
+                            finalInput = "ss";
+                            speechRecognizer.startListening(intentRecognizer);
+                        } else if (finalInput.contains("ভাগ")) {
+                            String[] arrofstr = userVoice.split(" ");
+                            System.out.println(getDoubleNumberFromText(arrofstr[0]));
+                            System.out.println(getDoubleNumberFromText(arrofstr[2]));
+                            double result=getDoubleNumberFromText(arrofstr[0]) / getDoubleNumberFromText(arrofstr[2]);
+                            tts.speak(String.valueOf(df2.format(result)), TextToSpeech.QUEUE_FLUSH, null);
+                            while (tts.isSpeaking()) {
+                            }
+                            finalInput = "ss";
+                            speechRecognizer.startListening(intentRecognizer);
+                        }
+                    }catch (Exception e){
+                        speechRecognizer.startListening(intentRecognizer);
+                        e.printStackTrace();
+                    }
+
+
                     dbQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -219,9 +268,11 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                 }
                                 speechRecognizer.startListening(intentRecognizer);
                             }
+
                             else if(finalInput.contains("সম্পর্কে বল")){
                                 try {
                                     Qanswer = QueryWiki(finalInput);
+
 
                                     if (Qanswer.equals("E") || Qanswer.contains("}")) {
                                         speechRecognizer.startListening(intentRecognizer);
@@ -246,6 +297,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
                                     e.printStackTrace();
                                 }
                             }
+
                             else {
                                 slQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
@@ -337,7 +389,7 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
             startActivity(new Intent(this,MathActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_tutorial){
-
+            startActivity(new Intent(this, GuidlineActivity.class));
         }
         else if(id==R.id.nav_bangla_website){
             startActivity(new Intent(this, WebActivity.class));
@@ -422,5 +474,39 @@ public class BanglaActivity extends AppCompatActivity implements NavigationView.
     @Override
     public void onInit(int i) {
 
+    }
+
+    // method to convert string number to integer
+    private double getDoubleNumberFromText(String strNum) {
+        switch (strNum) {
+            case "এক":
+                return 1.0;
+            case "দুই":
+                return 2.0;
+            case "তিন":
+                return 3.0;
+            case "চার":
+                return 4.0;
+            case "পাচ":
+                return 5.0;
+            case "ছয়":
+                return 6.0;
+            case "সাত":
+                return 7.0;
+            case "আট":
+                return 8.0;
+            case "নয়":
+                return 9.0;
+            case "দশ":
+                return 10.0;
+            case "তিরিশ":
+                return 30.0;
+            case "সাইট":
+                return 60.0;
+            case "আসি":
+                return 80.0;
+            default:
+                return Double.parseDouble(strNum);
+        }
     }
 }

@@ -184,7 +184,8 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
         tts = new TextToSpeech(this, this);
         tts.setLanguage(Locale.forLanguageTag("bn-BD"));
 
-        tts.setSpeechRate(.7f);
+        tts.setPitch(1.2f);
+        tts.setSpeechRate(1f);
 
         chapter_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -211,6 +212,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter1_1image.setVisibility(View.VISIBLE);
 
@@ -246,6 +248,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter1_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -320,6 +323,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter2image.setVisibility(View.VISIBLE);
 
@@ -332,6 +336,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter2image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -391,6 +396,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter3_1image.setVisibility(View.VISIBLE);
 
@@ -426,6 +432,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter3_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -496,6 +503,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter4image.setVisibility(View.VISIBLE);
 
@@ -508,6 +516,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter4image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -566,6 +575,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter5_1image.setVisibility(View.VISIBLE);
 
@@ -588,6 +598,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                 }
                                 chapter5_2image.setVisibility(View.GONE);
+                                toolbar.setVisibility(View.VISIBLE);
                                 chapter_1.setVisibility(View.VISIBLE);
                                 chapter_2.setVisibility(View.VISIBLE);
                                 chapter_3.setVisibility(View.VISIBLE);
@@ -653,6 +664,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter6image.setVisibility(View.VISIBLE);
 
@@ -665,6 +677,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter6image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -723,6 +736,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter7_1image.setVisibility(View.VISIBLE);
 
@@ -758,6 +772,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter7_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -828,6 +843,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter8_1image.setVisibility(View.VISIBLE);
 
@@ -863,6 +879,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter8_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -933,6 +950,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter9image.setVisibility(View.VISIBLE);
 
@@ -945,6 +963,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter9image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1003,6 +1022,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter10_1image.setVisibility(View.VISIBLE);
 
@@ -1038,6 +1058,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter10_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -1108,6 +1129,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter11image.setVisibility(View.VISIBLE);
 
@@ -1120,6 +1142,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter11image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1178,6 +1201,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter12_1image.setVisibility(View.VISIBLE);
 
@@ -1213,6 +1237,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter12_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -1283,6 +1308,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter13image.setVisibility(View.VISIBLE);
 
@@ -1295,6 +1321,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter13image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1353,6 +1380,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter14_1image.setVisibility(View.VISIBLE);
 
@@ -1388,6 +1416,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter14_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -1458,6 +1487,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter15image.setVisibility(View.VISIBLE);
 
@@ -1470,6 +1500,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter15image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1528,6 +1559,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter16_1image.setVisibility(View.VISIBLE);
 
@@ -1563,6 +1595,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter16_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -1633,6 +1666,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter17image.setVisibility(View.VISIBLE);
 
@@ -1645,6 +1679,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter17image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1704,6 +1739,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter18_1image.setVisibility(View.VISIBLE);
 
@@ -1739,6 +1775,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter18_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -1810,6 +1847,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter19_1image.setVisibility(View.VISIBLE);
 
@@ -1832,6 +1870,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                 }
                                 chapter19_2image.setVisibility(View.GONE);
+                                toolbar.setVisibility(View.VISIBLE);
                                 chapter_1.setVisibility(View.VISIBLE);
                                 chapter_2.setVisibility(View.VISIBLE);
                                 chapter_3.setVisibility(View.VISIBLE);
@@ -1893,6 +1932,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter20image.setVisibility(View.VISIBLE);
 
@@ -1905,6 +1945,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter20image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1964,6 +2005,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter21_1image.setVisibility(View.VISIBLE);
 
@@ -1999,6 +2041,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter21_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -2070,6 +2113,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                 chapter_20.setVisibility(View.GONE);
                 chapter_21.setVisibility(View.GONE);
                 chapter_22.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
 
                 chapter22_1image.setVisibility(View.VISIBLE);
 
@@ -2105,6 +2149,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter22_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -2127,6 +2172,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
                                         chapter_20.setVisibility(View.VISIBLE);
                                         chapter_21.setVisibility(View.VISIBLE);
                                         chapter_22.setVisibility(View.VISIBLE);
+
                                     }
 
                                     @Override

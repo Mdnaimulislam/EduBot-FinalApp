@@ -12,7 +12,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.speech.tts.TextToSpeech;
 
+import com.example.edubot.Choose_Language;
 import com.example.edubot.R;
+import com.example.edubot.english.BookActivityEnglish;
+import com.example.edubot.english.SubjectActivityEnglishClass_1;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -66,7 +69,8 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
     private TextToSpeech tts;
     private Button stop;
     private Toolbar toolbar;
-    int x=0;
+    SubjectActivityEnglishClass_1 b=new   SubjectActivityEnglishClass_1();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +84,12 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BanglaChapterClass1ActivityBangla.this, BookActivityBangla.class));
+                if(b.x==1) {
+                    startActivity(new Intent(BanglaChapterClass1ActivityBangla.this, BookActivityBangla.class));
+                }
+                else if(b.x==2){
+                    startActivity(new Intent(BanglaChapterClass1ActivityBangla.this, BookActivityEnglish.class));
+                }
             }
         });
 
@@ -128,13 +137,12 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
         tts = new TextToSpeech(this, this);
         tts.setLanguage(Locale.forLanguageTag("bn-BD"));
 
-        tts.setSpeechRate(.7f);
+        tts.setPitch(1.2f);
+        tts.setSpeechRate(1f);
 
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                tts.stop();
-                x=1;
                 startActivity(new Intent(BanglaChapterClass1ActivityBangla.this,BanglaChapterClass1ActivityBangla.class));
             }
         });
@@ -162,6 +170,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter1image.setVisibility(View.VISIBLE);
                 stop.setVisibility(View.VISIBLE);
 
@@ -171,11 +180,10 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                         String answer=(String) snapshot.child("Subjects").child("class_1").child("Bangla").child("chapter-1").getValue();
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
-                            if(x==1){
-                                tts.stop();
-                            }
+
                         }
                         chapter1image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -229,6 +237,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter2_1image.setVisibility(View.VISIBLE);
 
 
@@ -263,6 +272,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                                         }
                                         chapter2_3image.setVisibility(View.GONE);
+                                        toolbar.setVisibility(View.VISIBLE);
                                         chapter_1.setVisibility(View.VISIBLE);
                                         chapter_2.setVisibility(View.VISIBLE);
                                         chapter_3.setVisibility(View.VISIBLE);
@@ -328,6 +338,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter3image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -339,6 +350,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter3image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -390,6 +402,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter4image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -401,6 +414,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter4image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -452,6 +466,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter5image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -463,6 +478,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter5image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -514,6 +530,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter6image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -525,6 +542,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter6image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -576,6 +594,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter7image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -587,6 +606,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter7image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -638,6 +658,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter8image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -649,6 +670,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter8image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -700,6 +722,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter9image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -711,6 +734,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter9image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -762,6 +786,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter10image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -773,6 +798,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter10image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -824,6 +850,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter11image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -835,6 +862,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter11image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -886,6 +914,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter12image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -897,6 +926,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter12image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -948,6 +978,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter13image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -959,6 +990,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter13image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1010,6 +1042,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter14image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1021,6 +1054,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter14image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1072,6 +1106,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter15image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1083,6 +1118,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter15image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1134,6 +1170,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter16image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1145,6 +1182,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter16image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1196,6 +1234,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter17image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1207,6 +1246,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter17image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1258,6 +1298,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter18image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1269,6 +1310,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter18image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);
@@ -1320,6 +1362,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_17.setVisibility(View.GONE);
                 chapter_18.setVisibility(View.GONE);
                 chapter_19.setVisibility(View.GONE);
+                toolbar.setVisibility(View.GONE);
                 chapter19image.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -1331,6 +1374,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
                         }
                         chapter19image.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.VISIBLE);
                         chapter_1.setVisibility(View.VISIBLE);
                         chapter_2.setVisibility(View.VISIBLE);
                         chapter_3.setVisibility(View.VISIBLE);

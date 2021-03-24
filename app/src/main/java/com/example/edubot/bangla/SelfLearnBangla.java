@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.speech.tts.TextToSpeech;
 import android.widget.TextView;
 
+import com.example.edubot.GuidlineActivity;
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
@@ -57,7 +58,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
         //text to speech config
         TextToSpeech tts = new TextToSpeech(this, this);
         tts.setLanguage(Locale.forLanguageTag("bn-BD"));
-        tts.setPitch(0.8f);
+        tts.setPitch(1.2f);
         tts.setSpeechRate(1f);
 
         qlearnbutton=(Button)findViewById(R.id.bangla_qlearn);
@@ -204,7 +205,7 @@ public class SelfLearnBangla extends AppCompatActivity implements NavigationView
             startActivity(new Intent(this,MathActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_tutorial){
-
+            startActivity(new Intent(this, GuidlineActivity.class));
         }
         else if(id==R.id.nav_bangla_website){
             startActivity(new Intent(this, WebActivity.class));

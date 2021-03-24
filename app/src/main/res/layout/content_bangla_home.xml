@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textOff="@string/speak"
-        android:textOn="@string/stop_speak"
+        android:textOn="......"
         android:textAllCaps="false"/>
 
 

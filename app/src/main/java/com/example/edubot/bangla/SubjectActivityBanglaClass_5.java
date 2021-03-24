@@ -32,6 +32,12 @@ public class SubjectActivityBanglaClass_5 extends AppCompatActivity {
                 startActivity(new Intent(SubjectActivityBanglaClass_5.this,BanglaChapterClass5ActivityBangla.class));
             }
         });
+        english_sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SubjectActivityBanglaClass_5.this,EnglishChapterClass5ActivityBangla.class));
+            }
+        });
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

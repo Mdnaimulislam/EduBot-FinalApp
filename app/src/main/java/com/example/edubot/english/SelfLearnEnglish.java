@@ -58,7 +58,7 @@ public class SelfLearnEnglish extends AppCompatActivity implements NavigationVie
         //text to speech config
         TextToSpeech tts = new TextToSpeech(this, this);
         tts.setLanguage(Locale.forLanguageTag("en-US"));
-        tts.setPitch(0.8f);
+        tts.setPitch(1.2f);
         tts.setSpeechRate(1f);
 
         qlearnbutton=(Button)findViewById(R.id.bangla_qlearn);

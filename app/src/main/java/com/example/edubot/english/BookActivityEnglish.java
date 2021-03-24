@@ -25,6 +25,9 @@ import com.example.edubot.bangla.ScanActivityBangla;
 import com.example.edubot.bangla.SelfLearnBangla;
 import com.example.edubot.bangla.SubjectActivityBanglaClass_1;
 import com.example.edubot.bangla.SubjectActivityBanglaClass_2;
+import com.example.edubot.bangla.SubjectActivityBanglaClass_3;
+import com.example.edubot.bangla.SubjectActivityBanglaClass_4;
+import com.example.edubot.bangla.SubjectActivityBanglaClass_5;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -33,6 +36,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class BookActivityEnglish extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Button class1;
     private Button class2;
+    private Button class3;
+    private Button class4;
+    private Button class5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,19 +62,43 @@ public class BookActivityEnglish extends AppCompatActivity implements Navigation
 
         class1=(Button)findViewById(R.id.class_1);
         class2=(Button)findViewById(R.id.class_2);
+        class3=(Button)findViewById(R.id.class_3);
+        class4=(Button)findViewById(R.id.class_4);
+        class5=(Button)findViewById(R.id.class_5);
 
         class1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_1.class));
+                startActivity(new Intent(BookActivityEnglish.this,SubjectActivityBanglaClass_1.class));
             }
         });
         class2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_2.class));
+                startActivity(new Intent(BookActivityEnglish.this,SubjectActivityBanglaClass_2.class));
             }
         });
+
+        class3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_3.class));
+            }
+        });
+        class4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_4.class));
+            }
+        });
+        class5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_5.class));
+            }
+        });
+
+
 
     }
 

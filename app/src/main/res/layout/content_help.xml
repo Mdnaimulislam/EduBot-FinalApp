@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="50dp"
+    android:background="#CD7979"
     tools:context=".HelpActivity">
 
     <EditText
@@ -16,6 +17,7 @@
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:hint="@string/problem_subject"
+        android:textColorHint="@color/white"
         android:background="@drawable/editshap"
         android:autofillHints=""
         android:inputType="text" />
@@ -33,6 +35,7 @@
         android:hint="@string/message"
         android:textAllCaps="false"
         android:autofillHints=""
+        android:textColorHint="@color/white"
         android:inputType="text" />
 
     <Button

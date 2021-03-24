@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white"
+    android:background="#750097A7"
     >
 
 
@@ -29,7 +29,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="31dp"
         android:layout_marginTop="22dp"
-        android:background="@drawable/editshap"
         android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
@@ -42,7 +41,6 @@
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
         android:layout_marginStart="31dp"
-        android:background="@drawable/editshap"
         android:hint="@string/your_password"
         android:inputType="textPassword"
         android:textColorHint="#191515"

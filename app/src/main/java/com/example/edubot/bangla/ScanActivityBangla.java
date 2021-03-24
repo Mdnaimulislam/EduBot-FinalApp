@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.edubot.GuidlineActivity;
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
@@ -178,7 +179,7 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
             startActivity(new Intent(this,MathActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_tutorial){
-
+            startActivity(new Intent(this, GuidlineActivity.class));
         }
         else if(id==R.id.nav_bangla_website){
             startActivity(new Intent(this, WebActivity.class));

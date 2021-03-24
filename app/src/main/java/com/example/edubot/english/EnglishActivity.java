@@ -25,6 +25,7 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.example.edubot.Choose_Language;
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
@@ -42,6 +43,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.apache.commons.lang.StringEscapeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -72,6 +74,8 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
     String Uid="";
     private AudioManager mAudioManager;
     private int mStreamVolume;
+    Choose_Language b=new Choose_Language();
+    TextToSpeech tts;
     DatabaseReference dbQuestions = FirebaseDatabase.getInstance().getReference().child("Constant English Questions");
     DatabaseReference slQuestions = FirebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("Self Questions");
 
@@ -93,6 +97,11 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
         StrictMode.setThreadPolicy(policy);
 
         //
+        //text to speech config
+        tts = new TextToSpeech(this, this);
+        tts.setLanguage(Locale.forLanguageTag("en-US"));
+        tts.setPitch(1.2f);
+        tts.setSpeechRate(1f);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("MUKTI");
@@ -118,13 +127,13 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
                     setSpeechRecognizer();
-                    mStreamVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
-                    mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,0,0);
+                    //mStreamVolume=mAudioManager.getStreamVolume(AudioManager.STREAM_NOTIFICATION);
+                   // mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,0,0);
                 }
                 else{
                     speechRecognizer.destroy();
                     SystemClock.sleep(700);
-                    mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,mStreamVolume,0);
+                    //mAudioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION,mStreamVolume,0);
                 }
             }
         });
@@ -132,11 +141,7 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
     }
 
     public void setSpeechRecognizer(){
-        //text to speech config
-        TextToSpeech tts = new TextToSpeech(this, this);
-        tts.setLanguage(Locale.forLanguageTag("en-US"));
-        tts.setPitch(1.5f);
-        tts.setSpeechRate(1f);
+
         //Speech recognizer configure
         intentRecognizer = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en-US");
@@ -146,9 +151,13 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
         intentRecognizer.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
 
+        speechRecognizer.startListening(intentRecognizer);
+
         speechRecognizer.setRecognitionListener(new RecognitionListener() {
             @Override
             public void onReadyForSpeech(Bundle bundle) {
+
+                talk.setText("Listening");
             }
 
             @Override
@@ -178,13 +187,21 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
 
             @Override
             public void onResults(Bundle bundle) {
+                talk.setText("Listening Succes");
                 ArrayList<String> store = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 String userVoice = "";
                 if (store != null) {
                     userVoice = store.get(0);
                     String finalInput = userVoice;
 
-
+                    try {
+                        b.intentAction(finalInput);
+                        if(b.check=="b"){
+                            speechRecognizer.startListening(intentRecognizer);
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
                     dbQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -192,58 +209,87 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
                             String Qanswer = (String) snapshot.child(finalInput).getValue();
 
                             if (Qanswer != null) {
+                                try {
+                                    b.intentAction("A");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
                                 while (tts.isSpeaking()){
                                 }
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 speechRecognizer.startListening(intentRecognizer);
                             }
-                            else {
+                            else if(finalInput.contains("say")){
                                 try {
                                     Qanswer = QueryWiki(finalInput);
 
-                                    tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
+                                    System.out.println(Qanswer);
+                                        try {
+                                            b.intentAction("A");
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                        tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
                                         while (tts.isSpeaking()){
                                         }
+                                        try {
+                                            b.intentAction("B");
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                        SystemClock.sleep(900);
                                         speechRecognizer.startListening(intentRecognizer);
-
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
                             }
-                        }
+                            else {
+                                slQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
+                                        String Qanswer = (String) snapshot.child(finalInput).getValue();
 
-                        }
-                    });
+                                        if (Qanswer != null) {
+                                            try {
+                                                b.intentAction("A");
+                                            } catch (Exception e) {
+                                                e.printStackTrace();
+                                            }
 
-                    slQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
+                                            while (tts.isSpeaking()){
+                                            }
+                                            try {
+                                                b.intentAction("B");
+                                            } catch (Exception e) {
+                                                e.printStackTrace();
+                                            }
 
-                            String Qanswer = (String) snapshot.child(finalInput).getValue();
+                                            speechRecognizer.startListening(intentRecognizer);
+                                        }
 
-                            if (Qanswer != null) {
-                                tts.speak(Qanswer,TextToSpeech.QUEUE_FLUSH,null);
-                                while (tts.isSpeaking()){
-                                }
-                                speechRecognizer.startListening(intentRecognizer);
+                                    }
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
                             }
-
-                           /* else {
-                                tts.speak("দুঃখিত আমি এই প্রশ্ন এর উত্তর বলতে এখনও অক্ষম।আমাকে যদি শিখাতে চান তাহলে রোবটকে শিখাও অপশন এ যান। ধন্যবাদ।",TextToSpeech.QUEUE_FLUSH,null);
-                                while (tts.isSpeaking()){
-
-                                }
-                                speechRecognizer.startListening(intentRecognizer);
-                            }*/
                         }
+
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
 
                         }
                     });
+
+
 
                 }
             }
@@ -258,7 +304,6 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
 
             }
         });
-        speechRecognizer.startListening(intentRecognizer);
     }
 
 
@@ -323,17 +368,19 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
         //Wait for user response
         //System.out.println("\n\nType something that you want me to search on the internet...");
         //String nextLine = scanner.nextLine();
-        String searchText = wikiSearch +" simple wiki english";
-        //System.out.println("Searching on the web....");
+        String searchText = wikiSearch +" wikipedia";
+        System.out.println(searchText);
 
         Document google = Jsoup.connect("https://www.google.com/search?q="+searchText).get();
 
         Element link= google.getElementsByClass("yuRUbf").select("a").first();
 
+        System.out.println(link);
+
         String relHref = link.attr("href"); // == "/"
-        System.out.println(relHref);
+
         String absHref = link.attr("abs:href");
-        System.out.println(absHref);
+
 
 
 
@@ -371,8 +418,10 @@ public class EnglishActivity extends AppCompatActivity implements NavigationView
         String textToTell = result.length() > 1500 ? result.substring(0, 1500) : result;
         System.out.println(textToTell);
 
+        String output= StringEscapeUtils.unescapeJava(textToTell);
 
-        return textToTell;
+
+        return output;
     }
 
 }

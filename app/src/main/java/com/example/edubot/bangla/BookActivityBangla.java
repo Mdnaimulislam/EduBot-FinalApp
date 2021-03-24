@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.edubot.GuidlineActivity;
 import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
@@ -124,7 +125,7 @@ public class BookActivityBangla extends AppCompatActivity implements NavigationV
             startActivity(new Intent(this,MathActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_tutorial){
-
+            startActivity(new Intent(this, GuidlineActivity.class));
         }
         else if(id==R.id.nav_bangla_website){
             startActivity(new Intent(this, WebActivity.class));

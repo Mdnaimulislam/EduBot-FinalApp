@@ -144,7 +144,7 @@ public class HelpActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(this, MathActivityBangla.class));
         }
         else if(id==R.id.nav_bangla_tutorial){
-
+            startActivity(new Intent(this, GuidlineActivity.class));
         }
         else if(id==R.id.nav_bangla_website){
             startActivity(new Intent(this, WebActivity.class));
