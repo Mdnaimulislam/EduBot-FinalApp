@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#750FC9DC"
     tools:context=".Register"
     android:orientation="vertical"
     >
@@ -30,8 +30,8 @@
         android:layout_below="@id/profile_image"
         android:background="@drawable/editshap"
         android:hint="@string/full_name"
-        android:textColor="#fff"
-        android:textColorHint="#fff"
+        android:textColor="#090101"
+        android:textColorHint="#050101"
         android:inputType="textPersonName"
         android:autofillHints="" />
 
@@ -44,9 +44,9 @@
         android:background="@drawable/editshap"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:textColor="#fff"
+        android:textColor="#0C0101"
         android:layout_centerHorizontal="true"
-        android:textColorHint="#fff"
+        android:textColorHint="#070000"
         android:layout_below="@+id/name"
 
         android:autofillHints="" />
@@ -58,9 +58,9 @@
         android:background="@drawable/editshap"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textColor="#fff"
+        android:textColor="#0C0101"
         android:layout_centerHorizontal="true"
-        android:textColorHint="#fff"
+        android:textColorHint="#070000"
         android:layout_below="@+id/u_pass"
         android:autofillHints=""
         />
@@ -72,9 +72,9 @@
         android:background="@drawable/editshap"
         android:hint="@string/phone_number"
         android:inputType="phone"
-        android:textColor="#fff"
+        android:textColor="#0C0101"
         android:layout_centerHorizontal="true"
-        android:textColorHint="#fff"
+        android:textColorHint="#070000"
         android:layout_below="@+id/u_email"
 
         android:autofillHints="" />
@@ -87,8 +87,8 @@
         android:background="@drawable/editshap"
         android:hint="@string/address"
         android:layout_centerHorizontal="true"
-        android:textColor="#fff"
-        android:textColorHint="#fff"
+        android:textColor="#070000"
+        android:textColorHint="#090000"
         android:layout_below="@+id/u_phone"
         android:inputType="text"
         android:autofillHints="" />
@@ -102,7 +102,7 @@
         android:layout_marginTop="11dp"
         android:backgroundTint="@color/btmcolor"
         android:text="@string/register"
-        android:textColor="#fff"
+        android:textColor="#020000"
         android:textSize="15sp"
         android:textStyle="italic" />
 
@@ -112,7 +112,7 @@
         android:layout_height="50dp"
         android:backgroundTint="@color/btmcolor"
         android:text="@string/go_to_login"
-        android:textColor="#fff"
+        android:textColor="#070101"
         android:textSize="15sp"
         android:textStyle="italic"
         android:layout_centerHorizontal="true"

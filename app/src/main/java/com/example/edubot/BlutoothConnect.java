@@ -12,7 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.edubot.english.EnglishActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;

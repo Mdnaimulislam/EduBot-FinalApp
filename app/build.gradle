@@ -57,6 +57,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test:rules:1.1.0'
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.6.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 
 
 

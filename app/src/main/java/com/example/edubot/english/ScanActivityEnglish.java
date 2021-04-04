@@ -26,11 +26,7 @@ import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.WebActivity;
-import com.example.edubot.bangla.BanglaActivity;
-import com.example.edubot.bangla.BookActivityBangla;
-import com.example.edubot.bangla.MathActivityBangla;
-import com.example.edubot.bangla.ScanActivityBangla;
-import com.example.edubot.bangla.SelfLearnBangla;
+import com.example.edubot.bangla.BanglaActivityResponsive;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -38,17 +34,16 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.ml.vision.text.FirebaseVisionCloudTextRecognizerOptions;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ScanActivityEnglish extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
+public class ScanActivityEnglish extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,TextToSpeech.OnInitListener {
     private ImageView imageView;
     private TextView textView;
     private EditText titleText;
@@ -76,6 +71,10 @@ public class ScanActivityEnglish extends AppCompatActivity  implements Navigatio
         View headerView = navigationView.getHeaderView(0);
         TextView userNameTextView = headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.profile_image);
+        tts = new TextToSpeech(this, this);
+        tts.setLanguage(Locale.forLanguageTag("en-US"));
+        tts.setPitch(1.2f);
+        tts.setSpeechRate(1f);
 
 
 
@@ -115,13 +114,10 @@ public class ScanActivityEnglish extends AppCompatActivity  implements Navigatio
                 //2. Get an instance of FirebaseVision
                 FirebaseVision firebaseVision = FirebaseVision.getInstance();
                 //3. Create an instance of FirebaseVisionTextRecognizer
-                FirebaseVisionCloudTextRecognizerOptions options = new FirebaseVisionCloudTextRecognizerOptions.Builder()
-                        .setLanguageHints(Arrays.asList("en"))
-                        .build();
-
-                FirebaseVisionTextRecognizer firebaseVisionTextRecognizer = firebaseVision.getCloudTextRecognizer(options);
+                FirebaseVisionTextRecognizer firebaseVisionTextRecognizer = firebaseVision.getOnDeviceTextRecognizer();
                 //4. Create a task to process the image
                 Task<FirebaseVisionText> task = firebaseVisionTextRecognizer.processImage(firebaseVisionImage);
+                System.out.println(task);
                 //5. if task is success
                 task.addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
                     @Override
@@ -166,7 +162,7 @@ public class ScanActivityEnglish extends AppCompatActivity  implements Navigatio
         int id = item.getItemId();
 
         if(id==R.id.nav_english_home){
-            startActivity(new Intent(this, EnglishActivity.class));
+            startActivity(new Intent(this, EnglishActivityResponsive.class));
         }
         else if(id==R.id.nav_english_book){
             startActivity(new Intent(this, BookActivityEnglish.class));
@@ -189,6 +185,9 @@ public class ScanActivityEnglish extends AppCompatActivity  implements Navigatio
         else if(id==R.id.nav_english_help){
             startActivity(new Intent(this, HelpActivity.class));
         }
+        else if(id==R.id.nav_bangla_language){
+            startActivity(new Intent(this, BanglaActivityResponsive.class));
+        }
         else if(id==R.id.nav_english_logout){
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(this, MainActivity.class));
@@ -198,5 +197,10 @@ public class ScanActivityEnglish extends AppCompatActivity  implements Navigatio
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onInit(int i) {
+
     }
 }

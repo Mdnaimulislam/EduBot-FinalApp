@@ -10,20 +10,22 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.speech.tts.TextToSpeech;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-import com.example.edubot.bangla.BanglaActivity;
-import com.example.edubot.english.EnglishActivity;
+import com.example.edubot.bangla.BanglaActivityResponsive;
+import com.example.edubot.english.EnglishActivityResponsive;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
 
-public class Choose_Language extends AppCompatActivity {
+public class Choose_Language extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private Button logout_btn;
     private Button bangla_btn;
     private Button english_btn;
@@ -40,6 +42,8 @@ public class Choose_Language extends AppCompatActivity {
     private String deviceName = null;
     private String deviceAddress;
     public String check="";
+    int x=2;
+
 
 
 
@@ -55,14 +59,34 @@ public class Choose_Language extends AppCompatActivity {
         english_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Choose_Language.this, EnglishActivity.class));
+                if(x==1) {
+                    Toast.makeText(Choose_Language.this,"Bluetooth Connected",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Choose_Language.this, EnglishActivityResponsive.class));
+                }
+                else if(x==2){
+                    Toast.makeText(Choose_Language.this,"Wait! Bluetooth is initialising",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(Choose_Language.this,"Bluetooth Connection Failed!",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Choose_Language.this, BlutoothConnect.class));                }
             }
         });
 
         bangla_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Choose_Language.this, BanglaActivity.class));
+                if(x==1) {
+                    Toast.makeText(Choose_Language.this,"Bluetooth Connected",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Choose_Language.this, BanglaActivityResponsive.class));
+                }
+                else if(x==2){
+                    Toast.makeText(Choose_Language.this,"Wait! Bluetooth is initialising",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(Choose_Language.this,"Bluetooth Connection Failed!",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(Choose_Language.this, BlutoothConnect.class));
+
+                }
             }
         });
 
@@ -96,9 +120,11 @@ public class Choose_Language extends AppCompatActivity {
                             case 1:
                                 Log.d(TAG, "handleMessage: Connected");
 
+
                                 break;
                             case -1:
                                 Log.d(TAG, "handleMessage: Failed to connect");
+
                                 break;
                         }
                         break;
@@ -109,7 +135,13 @@ public class Choose_Language extends AppCompatActivity {
         };
 
     }
-    public static class CreateConnectThread extends Thread {
+
+    @Override
+    public void onInit(int i) {
+
+    }
+
+    public class CreateConnectThread extends Thread {
 
         public CreateConnectThread(BluetoothAdapter bluetoothAdapter, String address) {
             /*
@@ -144,18 +176,14 @@ public class Choose_Language extends AppCompatActivity {
                 // until it succeeds or throws an exception.
                 mmSocket.connect();
                 Log.e("Status", "Device connected");
+                x=1;
 
             } catch (IOException connectException) {
                 // Unable to connect; close the socket and return.
-
-
                 //Code to restrict user
-
-
-
-
                 try {
                     mmSocket.close();
+                    x=0;
                     Log.e("Status", "Cannot connect to device");
                 } catch (IOException closeException) {
                     Log.e(TAG, "Could not close the client socket", closeException);
@@ -181,7 +209,7 @@ public class Choose_Language extends AppCompatActivity {
     }
 
     /* =============================== Thread for Data Transfer =========================================== */
-    public static class ConnectedThread extends Thread {
+    public class ConnectedThread extends Thread {
         private final BluetoothSocket mmSocket;
         private final InputStream mmInStream;
         private final OutputStream mmOutStream;
@@ -266,7 +294,15 @@ public class Choose_Language extends AppCompatActivity {
                 connectedThread.write("C");
                 check="b";
                 break;
+            case "hands up":
+                connectedThread.write("C");
+                check="b";
+                break;
             case "হাত নামাও":
+                connectedThread.write("D");
+                check="b";
+                break;
+            case "hands down":
                 connectedThread.write("D");
                 check="b";
                 break;
@@ -279,6 +315,12 @@ public class Choose_Language extends AppCompatActivity {
                 check="b";
                 break;
             case "ডান্স করো":
+                //tts.SpeakTTS("আচ্ছা আমি চেষ্টা করছি");
+                Thread.sleep(1000);
+                connectedThread.write("G");
+                check="b";
+                break;
+            case "dance":
                 //tts.SpeakTTS("আচ্ছা আমি চেষ্টা করছি");
                 Thread.sleep(1000);
                 connectedThread.write("G");

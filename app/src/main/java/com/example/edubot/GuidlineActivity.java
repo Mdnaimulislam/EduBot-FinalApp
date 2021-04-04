@@ -16,10 +16,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.edubot.bangla.BanglaActivity;
+import com.example.edubot.bangla.BanglaActivityResponsive;
 import com.example.edubot.bangla.BookActivityBangla;
 import com.example.edubot.bangla.MathActivityBangla;
 import com.example.edubot.bangla.ScanActivityBangla;
+import com.example.edubot.bangla.SelfLearnBangla;
+import com.example.edubot.english.BookActivityEnglish;
+import com.example.edubot.english.EnglishActivityResponsive;
+import com.example.edubot.english.MathActivityEnglish;
+import com.example.edubot.english.ScanActivityEnglish;
+import com.example.edubot.english.SelfLearnEnglish;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -298,13 +304,14 @@ public class GuidlineActivity extends AppCompatActivity implements NavigationVie
         int id = item.getItemId();
 
         if(id==R.id.nav_bangla_home){
-            startActivity(new Intent(this, BanglaActivity.class));
+            startActivity(new Intent(this, BanglaActivityResponsive.class));
         }
         else if(id==R.id.nav_bangla_book){
             startActivity(new Intent(this, BookActivityBangla.class));
 
         }
         else if(id==R.id.nav_bangla_learn){
+            startActivity(new Intent(this, SelfLearnBangla.class));
         }
         else if(id==R.id.nav_bangla_scan){
             startActivity(new Intent(this, ScanActivityBangla.class));
@@ -321,7 +328,44 @@ public class GuidlineActivity extends AppCompatActivity implements NavigationVie
         else if(id==R.id.nav_bangla_help){
             startActivity(new Intent(this, HelpActivity.class));
         }
+        else if(id==R.id.nav_english_language){
+            startActivity(new Intent(this, EnglishActivityResponsive.class));
+        }
         else if(id==R.id.nav_bangla_logout){
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(this, MainActivity.class));
+        }
+
+
+        if(id==R.id.nav_english_home){
+            startActivity(new Intent(this, EnglishActivityResponsive.class));
+        }
+        else if(id==R.id.nav_english_book){
+            startActivity(new Intent(this, BookActivityEnglish.class));
+
+        }
+        else if(id==R.id.nav_english_learn){
+            startActivity(new Intent(this, SelfLearnEnglish.class));
+        }
+        else if(id==R.id.nav_english_scan){
+            startActivity(new Intent(this, ScanActivityEnglish.class));
+        }
+        else if(id==R.id.nav_english_calculator){
+            startActivity(new Intent(this, MathActivityEnglish.class));
+        }
+        else if(id==R.id.nav_english_tutorial){
+
+        }
+        else if(id==R.id.nav_english_website){
+            startActivity(new Intent(this, WebActivity.class));
+        }
+        else if(id==R.id.nav_english_help){
+            startActivity(new Intent(this, HelpActivity.class));
+        }
+        else if(id==R.id.nav_bangla_language){
+            startActivity(new Intent(this, BanglaActivityResponsive.class));
+        }
+        else if(id==R.id.nav_english_logout){
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(this, MainActivity.class));
         }

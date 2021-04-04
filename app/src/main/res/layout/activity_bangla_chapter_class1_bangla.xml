@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bangla.BanglaChapterClass2ActivityBangla"
+    tools:context=".bangla.BanglaChapterClass1ActivityBangla"
     android:background="@color/white"
     >
 
@@ -29,13 +29,6 @@
                 android:visibility="visible"
                 app:popupTheme="@style/Theme.EduBot.PopupOverlay" />
 
-            <Button
-                android:id="@+id/stop"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Stop"
-                android:visibility="gone"
-                />
 
         </com.google.android.material.appbar.AppBarLayout>
 

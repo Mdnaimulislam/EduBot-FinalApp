@@ -5,21 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#750097A7"
+    android:background="#750FC9DC"
     >
 
-
-    <de.hdodenhof.circleimageview.CircleImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/profile_image"
         android:layout_width="188dp"
         android:layout_height="168dp"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:src="@drawable/office"
+        android:src="@drawable/main_logo"
         app:civ_border_color="#021422"
         app:civ_border_width="4dp"
-        android:layout_centerHorizontal="true"
-         />
+        android:layout_centerHorizontal="true" />
+
 
     <EditText
         android:id="@+id/uemail"

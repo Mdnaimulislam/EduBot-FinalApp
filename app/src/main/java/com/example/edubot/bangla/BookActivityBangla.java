@@ -20,6 +20,7 @@ import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.WebActivity;
+import com.example.edubot.english.EnglishActivityResponsive;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -110,7 +111,7 @@ public class BookActivityBangla extends AppCompatActivity implements NavigationV
         int id = item.getItemId();
 
         if(id==R.id.nav_bangla_home){
-            startActivity(new Intent(this,BanglaActivity.class));
+            startActivity(new Intent(this, BanglaActivityResponsive.class));
         }
         else if(id==R.id.nav_bangla_book){
 
@@ -132,6 +133,9 @@ public class BookActivityBangla extends AppCompatActivity implements NavigationV
         }
         else if(id==R.id.nav_bangla_help){
             startActivity(new Intent(this, HelpActivity.class));
+        }
+        else if(id==R.id.nav_english_language){
+            startActivity(new Intent(this, EnglishActivityResponsive.class));
         }
         else if(id==R.id.nav_bangla_logout){
             FirebaseAuth.getInstance().signOut();

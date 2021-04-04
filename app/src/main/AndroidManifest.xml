@@ -23,7 +23,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EduBot">
-        <activity android:name=".bangla.EnglishChapterClass5ActivityBangla"></activity>
+        <activity android:name=".english.EnglishActivityManual"></activity>
+        <activity android:name=".bangla.BanglaActivityManual" />
+
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <activity android:name=".bangla.EnglishChapterClass5ActivityBangla" />
         <activity android:name=".bangla.EnglishChapterClass4ActivityBangla" />
         <activity android:name=".bangla.EnglishChapterClass3ActivityBangla" />
         <activity android:name=".bangla.EnglishChapterClass2ActivityBangla" />
@@ -59,10 +66,10 @@
         <activity android:name=".WebActivity" />
         <activity android:name=".bangla.SelfLearnBangla" />
         <activity
-            android:name=".bangla.BanglaActivity"
+            android:name=".bangla.BanglaActivityResponsive"
             android:label="@string/title_activity_bangla"
             android:theme="@style/Theme.EduBot.NoActionBar" />
-        <activity android:name=".english.EnglishActivity" />
+        <activity android:name=".english.EnglishActivityResponsive" />
         <activity android:name=".Forget_Password" />
         <activity android:name=".Choose_Language" />
         <activity android:name=".Register" />

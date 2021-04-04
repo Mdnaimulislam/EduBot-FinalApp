@@ -1,9 +1,412 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bangla.EnglishChapterClass2ActivityBangla">
+    tools:context=".bangla.EnglishChapterClass2ActivityBangla"
+    android:background="@color/white"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:background="@color/white"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.EduBot.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_back"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                android:visibility="visible"
+                app:popupTheme="@style/Theme.EduBot.PopupOverlay" />
+
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop"
+                android:visibility="gone"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <ImageView
+            android:id="@+id/unit_1_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_1_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_2_en_2"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:id="@+id/unit_3_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_3_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_4_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_4_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_5_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_5_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_6_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_6_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_7_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_7_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_8_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_8_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_9_1_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_9_1_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_9_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_9_2_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_10_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_10_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_11_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_11_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_12_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_12_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_13_1_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_13_1_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_13_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_13_2_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_14_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_14_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_15_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_15_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_16_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_16_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_17_1_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_17_1_en_2"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/unit_17_2_image"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            android:background="@drawable/unit_17_2_en_2"
+            android:visibility="gone"
+            />
+
+
+
+        <Button
+            android:id="@+id/unit_1"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#0097A7"
+            android:textColor="@color/black"
+            android:text="Unit-1: Greetings and Introductions"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/unit_1"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#FBC02D"
+            android:textColor="@color/black"
+            android:text="Unit-2: How old_______?"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_3"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#6B79D1"
+            android:textColor="@color/black"
+            android:text="Unit-3: How old are you?"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@id/unit_2"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_4"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#D32F2F"
+            android:textColor="@color/black"
+            android:text="Unit-4: How many____?"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@id/unit_3"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_5"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#AFB42B"
+            android:textColor="@color/black"
+            android:text="Unit-5: I am in.."
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_4"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_6"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#512DA8"
+            android:textColor="@color/black"
+            android:text="Unit-6: Head and shoulders"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_5"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_7"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#E64A19"
+            android:textColor="@color/black"
+            android:text="Unit-7: Parts of the body"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_6"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_8"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#1976D2"
+            android:textColor="@color/black"
+            android:text="Unit-8: Days of Week"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_7"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_9"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#0097A7"
+            android:textColor="@color/black"
+            android:text="Unit-9: Story: Rima and the seed"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_8"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_10"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#00796B"
+            android:textColor="@color/black"
+            android:text="Unit-10: Colours"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_9"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_11"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#C2185B"
+            android:textColor="@color/black"
+            android:text="Unit-11: Lucky the Circle"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_10"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_12"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#303F9F"
+            android:textColor="@color/black"
+            android:text="Unit-12: Animals"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_11"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_13"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#FBC02D"
+            android:textColor="@color/black"
+            android:text="Unit-13: Life Everyday"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_12"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_14"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#388E3C"
+            android:textColor="@color/black"
+            android:text="Unit-14: Kaniz's life"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_13"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_15"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#CC1A7B"
+            android:textColor="@color/black"
+            android:text="Unit-15: Anita's life"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_14"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_16"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#6A6A5E"
+            android:textColor="@color/black"
+            android:text="Unit-16: Where do animals live?"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_15"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/unit_17"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="#AFB42B"
+            android:textColor="@color/black"
+            android:text="Unit-17: Story: The golden goose"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:layout_below="@+id/unit_16"
+            android:visibility="visible"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>

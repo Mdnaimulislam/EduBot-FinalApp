@@ -26,6 +26,7 @@ import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.WebActivity;
+import com.example.edubot.english.EnglishActivityResponsive;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -56,7 +57,7 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan);
+        setContentView(R.layout.activity_scan_bangla);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("ছবি তুলে বই পড়");
         setSupportActionBar(toolbar);
@@ -163,7 +164,7 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
         int id = item.getItemId();
 
         if(id==R.id.nav_bangla_home){
-            startActivity(new Intent(this,BanglaActivity.class));
+            startActivity(new Intent(this, BanglaActivityResponsive.class));
         }
         else if(id==R.id.nav_bangla_book){
             startActivity(new Intent(this,BookActivityBangla.class));
@@ -186,6 +187,9 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
         }
         else if(id==R.id.nav_bangla_help){
             startActivity(new Intent(this, HelpActivity.class));
+        }
+        else if(id==R.id.nav_english_language){
+            startActivity(new Intent(this, EnglishActivityResponsive.class));
         }
         else if(id==R.id.nav_bangla_logout){
             FirebaseAuth.getInstance().signOut();

@@ -30,6 +30,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
     private Button chapter_2;
     private Button chapter_3;
     private Button chapter_4;
+    
     private Button chapter_5;
     private Button chapter_6;
     private Button chapter_7;
@@ -67,7 +68,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
     private ImageView chapter18image;
     private ImageView chapter19image;
     private TextToSpeech tts;
-    private Button stop;
+
     private Toolbar toolbar;
     SubjectActivityEnglishClass_1 b=new   SubjectActivityEnglishClass_1();
 
@@ -79,17 +80,14 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
 
         DatabaseReference chapter_answer = FirebaseDatabase.getInstance().getReference();
         toolbar=(Toolbar)findViewById(R.id.toolbar_back);
-        stop=(Button)findViewById(R.id.stop);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(b.x==1) {
+
                     startActivity(new Intent(BanglaChapterClass1ActivityBangla.this, BookActivityBangla.class));
-                }
-                else if(b.x==2){
-                    startActivity(new Intent(BanglaChapterClass1ActivityBangla.this, BookActivityEnglish.class));
-                }
+
+
             }
         });
 
@@ -140,12 +138,6 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
         tts.setPitch(1.2f);
         tts.setSpeechRate(1f);
 
-        stop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(BanglaChapterClass1ActivityBangla.this,BanglaChapterClass1ActivityBangla.class));
-            }
-        });
 
 
         chapter_1.setOnClickListener(new View.OnClickListener() {
@@ -172,7 +164,6 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
                 chapter_19.setVisibility(View.GONE);
                 toolbar.setVisibility(View.GONE);
                 chapter1image.setVisibility(View.VISIBLE);
-                stop.setVisibility(View.VISIBLE);
 
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

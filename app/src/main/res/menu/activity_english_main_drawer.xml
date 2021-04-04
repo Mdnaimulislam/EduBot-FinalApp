@@ -37,6 +37,10 @@
             android:icon="@drawable/ic_help"
             android:title="Help" />
         <item
+            android:id="@+id/nav_bangla_language"
+            android:icon="@drawable/ic_language"
+            android:title="Bangla Language" />
+        <item
             android:id="@+id/nav_english_logout"
             android:icon="@drawable/ic_logout"
             android:title="Logout" />

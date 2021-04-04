@@ -18,16 +18,7 @@ import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.WebActivity;
-import com.example.edubot.bangla.BanglaActivity;
-import com.example.edubot.bangla.BookActivityBangla;
-import com.example.edubot.bangla.MathActivityBangla;
-import com.example.edubot.bangla.ScanActivityBangla;
-import com.example.edubot.bangla.SelfLearnBangla;
-import com.example.edubot.bangla.SubjectActivityBanglaClass_1;
-import com.example.edubot.bangla.SubjectActivityBanglaClass_2;
-import com.example.edubot.bangla.SubjectActivityBanglaClass_3;
-import com.example.edubot.bangla.SubjectActivityBanglaClass_4;
-import com.example.edubot.bangla.SubjectActivityBanglaClass_5;
+import com.example.edubot.bangla.BanglaActivityResponsive;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -69,32 +60,32 @@ public class BookActivityEnglish extends AppCompatActivity implements Navigation
         class1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityEnglish.this,SubjectActivityBanglaClass_1.class));
+                startActivity(new Intent(BookActivityEnglish.this,SubjectActivityEnglishClass_1.class));
             }
         });
         class2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityEnglish.this,SubjectActivityBanglaClass_2.class));
+                startActivity(new Intent(BookActivityEnglish.this,SubjectActivityEnglishClass_2.class));
             }
         });
 
         class3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_3.class));
+                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityEnglishClass_3.class));
             }
         });
         class4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_4.class));
+                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityEnglishClass_4.class));
             }
         });
         class5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityBanglaClass_5.class));
+                startActivity(new Intent(BookActivityEnglish.this, SubjectActivityEnglishClass_5.class));
             }
         });
 
@@ -118,7 +109,7 @@ public class BookActivityEnglish extends AppCompatActivity implements Navigation
         int id = item.getItemId();
 
         if(id==R.id.nav_english_home){
-            startActivity(new Intent(this, EnglishActivity.class));
+            startActivity(new Intent(this, EnglishActivityResponsive.class));
         }
         else if(id==R.id.nav_english_book){
 
@@ -140,6 +131,9 @@ public class BookActivityEnglish extends AppCompatActivity implements Navigation
         }
         else if(id==R.id.nav_english_help){
             startActivity(new Intent(this, HelpActivity.class));
+        }
+        else if(id==R.id.nav_bangla_language){
+            startActivity(new Intent(this, BanglaActivityResponsive.class));
         }
         else if(id==R.id.nav_english_logout){
             FirebaseAuth.getInstance().signOut();
