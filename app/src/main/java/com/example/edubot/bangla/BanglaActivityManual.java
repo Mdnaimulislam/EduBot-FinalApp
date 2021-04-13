@@ -128,7 +128,7 @@ public class BanglaActivityManual extends AppCompatActivity implements Navigatio
             @Override
             public void onClick(View view) {
                 if(x==0) {
-                    startActivity(new Intent(BanglaActivityManual.this, BanglaActivityManual.class));
+                    startActivity(new Intent(BanglaActivityManual.this, BanglaActivityResponsive.class));
                 }
                 else{
                     Toast.makeText(BanglaActivityManual.this,"কথা বলা বন্ধ করো।",Toast.LENGTH_LONG).show();

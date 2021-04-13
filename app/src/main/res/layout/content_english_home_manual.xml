@@ -21,14 +21,14 @@
         android:textColor="#131313"
         />
     <Button
-        android:id="@+id/bangla_talk_btn_manual"
+        android:id="@+id/english_talk_btn_manual"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="@drawable/style_toggle_button"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:textColor="@color/black"
-        android:text="@string/speak"
+        android:text="Start Talking"
         android:textAllCaps="false"/>
 
 

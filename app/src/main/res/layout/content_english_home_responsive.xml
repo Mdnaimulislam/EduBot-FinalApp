@@ -22,7 +22,7 @@
         android:textColor="#131313"
         />
     <ToggleButton
-        android:id="@+id/english_talk_btn"
+        android:id="@+id/english_talk_btn_responsive"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:background="@drawable/style_toggle_button"

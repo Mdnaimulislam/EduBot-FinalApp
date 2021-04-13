@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.edubot.Choose_Language;
 import com.example.edubot.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Locale;
 
 public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implements TextToSpeech.OnInitListener {
+    Choose_Language b=new Choose_Language();
     private Button unit_1;
     private Button unit_2;
     private Button unit_3;
@@ -149,7 +151,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -251,6 +257,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -290,7 +301,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -420,6 +435,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -456,7 +476,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -556,6 +580,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -592,7 +621,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -772,6 +805,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -808,7 +846,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -879,6 +921,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -915,7 +962,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -1035,6 +1086,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -1071,7 +1127,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -1172,6 +1232,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -1208,7 +1273,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -1328,6 +1397,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -1364,7 +1438,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -1455,6 +1533,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -1491,7 +1574,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -1641,6 +1728,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -1677,7 +1769,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -1757,6 +1853,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -1793,7 +1894,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -1884,6 +1989,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -1920,7 +2030,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -2041,6 +2155,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -2077,7 +2196,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Look, Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -2158,6 +2281,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -2194,7 +2322,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Listen and say.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -2285,6 +2417,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -2321,7 +2458,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Say the alphabet.Sing the alphabet song.",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -2401,6 +2542,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -2437,7 +2583,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                 chapter_answer.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak("Vocabulary",TextToSpeech.QUEUE_FLUSH,null);
 
                         while (tts.isSpeaking()){
@@ -2739,6 +2889,11 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
                         unit_15.setVisibility(View.VISIBLE);
                         unit_16.setVisibility(View.VISIBLE);
                         unit_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 

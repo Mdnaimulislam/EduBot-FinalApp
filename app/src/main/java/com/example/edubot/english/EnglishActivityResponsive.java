@@ -21,8 +21,10 @@ import android.speech.SpeechRecognizer;
 import android.speech.tts.TextToSpeech;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.edubot.Choose_Language;
@@ -30,10 +32,6 @@ import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.bangla.BanglaActivityResponsive;
-import com.example.edubot.bangla.BookActivityBangla;
-import com.example.edubot.bangla.MathActivityBangla;
-import com.example.edubot.bangla.ScanActivityBangla;
-import com.example.edubot.bangla.SelfLearnBangla;
 import com.example.edubot.WebActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -65,7 +63,7 @@ import static android.Manifest.permission.RECORD_AUDIO;
 
 public class EnglishActivityResponsive extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, TextToSpeech.OnInitListener {
 
-
+    private Button Manual;
     ToggleButton talk;
     private SpeechRecognizer speechRecognizer;
     private Intent intentRecognizer;
@@ -83,7 +81,7 @@ public class EnglishActivityResponsive extends AppCompatActivity implements Navi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_english);
+        setContentView(R.layout.activity_english_responsive);
         //mute audio
         mAudioManager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
         //database
@@ -122,7 +120,19 @@ public class EnglishActivityResponsive extends AppCompatActivity implements Navi
         TextView userNameTextView = headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.profile_image);
 
-        talk=(ToggleButton)findViewById(R.id.english_talk_btn);
+        talk=(ToggleButton)findViewById(R.id.english_talk_btn_responsive);
+        Manual=(Button)findViewById(R.id.Manual);
+        Manual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(x==0) {
+                    startActivity(new Intent(EnglishActivityResponsive.this, EnglishActivityManual.class));
+                }
+                else{
+                    Toast.makeText(EnglishActivityResponsive.this,"Stop the Talking Option!",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         talk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -206,6 +216,11 @@ public class EnglishActivityResponsive extends AppCompatActivity implements Navi
                     }catch (Exception e){
                         e.printStackTrace();
                     }
+                    
+                    
+                    
+                    
+
                     dbQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {

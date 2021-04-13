@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.edubot.Choose_Language;
 import com.example.edubot.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Locale;
 
 public class BanglaChapterClass2ActivityBangla extends AppCompatActivity implements TextToSpeech.OnInitListener  {
+    Choose_Language b=new Choose_Language();
     private Button chapter_1;
     private Button chapter_2;
     private Button chapter_3;
@@ -139,6 +141,7 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
         chapter_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 chapter_1.setVisibility(View.GONE);
                 chapter_2.setVisibility(View.GONE);
                 chapter_3.setVisibility(View.GONE);
@@ -164,6 +167,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -187,6 +195,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                         chapter_15.setVisibility(View.VISIBLE);
                         chapter_16.setVisibility(View.VISIBLE);
                         chapter_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -229,6 +242,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-2_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -274,6 +292,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                         chapter_15.setVisibility(View.VISIBLE);
                                         chapter_16.setVisibility(View.VISIBLE);
                                         chapter_17.setVisibility(View.VISIBLE);
+                                        try {
+                                            b.intentAction("B");
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
                                     }
 
                                     @Override
@@ -326,6 +349,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-3").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -349,6 +377,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                         chapter_15.setVisibility(View.VISIBLE);
                         chapter_16.setVisibility(View.VISIBLE);
                         chapter_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -388,6 +421,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-4_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -421,6 +459,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -467,6 +510,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-5").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -490,6 +538,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                         chapter_15.setVisibility(View.VISIBLE);
                         chapter_16.setVisibility(View.VISIBLE);
                         chapter_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -529,6 +582,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-6_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -562,6 +620,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -608,6 +671,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-7_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -641,6 +709,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -687,6 +760,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-8").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -710,6 +788,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                         chapter_15.setVisibility(View.VISIBLE);
                         chapter_16.setVisibility(View.VISIBLE);
                         chapter_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -749,6 +832,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-9_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -782,6 +870,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -828,6 +921,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-10").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -851,6 +949,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                         chapter_15.setVisibility(View.VISIBLE);
                         chapter_16.setVisibility(View.VISIBLE);
                         chapter_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -890,6 +993,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-11_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -923,6 +1031,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -969,6 +1082,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-12").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -992,6 +1110,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                         chapter_15.setVisibility(View.VISIBLE);
                         chapter_16.setVisibility(View.VISIBLE);
                         chapter_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
@@ -1031,6 +1154,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-13_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1064,6 +1192,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -1110,6 +1243,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-14_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1143,6 +1281,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -1189,6 +1332,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-15_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1222,6 +1370,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -1268,6 +1421,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-16_1").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1301,6 +1459,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                                 chapter_15.setVisibility(View.VISIBLE);
                                 chapter_16.setVisibility(View.VISIBLE);
                                 chapter_17.setVisibility(View.VISIBLE);
+                                try {
+                                    b.intentAction("B");
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
 
                             }
 
@@ -1347,6 +1510,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String answer=(String) snapshot.child("Subjects").child("class_2").child("Bangla").child("chapter-17").getValue();
+                        try {
+                            b.intentAction("A");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         tts.speak(answer,TextToSpeech.QUEUE_FLUSH,null);
                         while (tts.isSpeaking()){
 
@@ -1370,6 +1538,11 @@ public class BanglaChapterClass2ActivityBangla extends AppCompatActivity impleme
                         chapter_15.setVisibility(View.VISIBLE);
                         chapter_16.setVisibility(View.VISIBLE);
                         chapter_17.setVisibility(View.VISIBLE);
+                        try {
+                            b.intentAction("B");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
                     }
 
