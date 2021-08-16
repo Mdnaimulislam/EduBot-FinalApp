@@ -21,11 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.edubot.GuidlineActivity;
-import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
-import com.example.edubot.WebActivity;
 import com.example.edubot.english.EnglishActivityResponsive;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -42,10 +39,11 @@ import android.speech.tts.TextToSpeech;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ScanActivityBangla extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ScanActivityBangla extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,TextToSpeech.OnInitListener {
     private ImageView imageView;
     private TextView textView;
     private EditText titleText;
@@ -53,13 +51,12 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
     private String s;
     private Uri mImageuri;
     private TextToSpeech tts;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_bangla);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("ছবি তুলে বই পড়");
+        toolbar.setTitle("Detect Book Text");
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -74,6 +71,10 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
         View headerView = navigationView.getHeaderView(0);
         TextView userNameTextView = headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.profile_image);
+        tts = new TextToSpeech(this, this);
+        tts.setLanguage(Locale.forLanguageTag("bn_BD"));
+        tts.setPitch(1.2f);
+        tts.setSpeechRate(1f);
 
 
 
@@ -200,5 +201,10 @@ public class ScanActivityBangla extends AppCompatActivity implements NavigationV
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onInit(int status) {
+
     }
 }

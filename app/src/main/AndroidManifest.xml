@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.edubot">
 
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -35,7 +41,17 @@
         <activity android:name=".bangla.EnglishChapterClass3ActivityBangla" />
         <activity android:name=".bangla.EnglishChapterClass2ActivityBangla" />
         <activity android:name=".bangla.EnglishChapterClass1ActivityBangla" />
-        <activity android:name=".GuidlineActivity" />
+        <activity android:name=".english.EnglishChapterClass5ActivityEnglish" />
+        <activity android:name=".english.EnglishChapterClass4ActivityEnglish" />
+        <activity android:name=".english.EnglishChapterClass3ActivityEnglish" />
+        <activity android:name=".english.EnglishChapterClass2ActivityEnglish" />
+        <activity android:name=".english.EnglishChapterClass1ActivityEnglish" />
+        <activity android:name=".english.BanglaChapterClass5ActivityEnglish" />
+        <activity android:name=".english.BanglaChapterClass4ActivityEnglish" />
+        <activity android:name=".english.BanglaChapterClass3ActivityEnglish" />
+        <activity android:name=".english.BanglaChapterClass2ActivityEnglish" />
+        <activity android:name=".english.BanglaChapterClass1ActivityEnglish" />
+
         <activity android:name=".english.SubjectActivityEnglishClass_5" />
         <activity android:name=".english.SubjectActivityEnglishClass_4" />
         <activity android:name=".english.SubjectActivityEnglishClass_3" />
@@ -58,12 +74,19 @@
         <activity android:name=".bangla.SubjectActivityBanglaClass_1" />
         <activity android:name=".bangla.BookActivityBangla" />
         <activity android:name=".bangla.MathActivityBangla" />
+        <activity android:name=".bangla.GuidlineActivity" />
+        <activity android:name=".bangla.WebActivity" />
+        <activity android:name=".bangla.HelpActivity" />
+        <activity android:name=".english.GuidlineActivity_English" />
+        <activity android:name=".english.WebActivity_English" />
+        <activity android:name=".english.HelpActivity_English" />
+
+
+
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".bangla.ScanActivityBangla" />
-        <activity android:name=".HelpActivity" />
-        <activity android:name=".WebActivity" />
         <activity android:name=".bangla.SelfLearnBangla" />
         <activity
             android:name=".bangla.BanglaActivityResponsive"

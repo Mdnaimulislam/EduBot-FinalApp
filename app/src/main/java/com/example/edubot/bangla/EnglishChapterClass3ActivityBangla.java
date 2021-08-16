@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.example.edubot.Choose_Language;
 import com.example.edubot.R;
+import com.example.edubot.english.SubjectActivityEnglishClass_3;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -87,7 +88,7 @@ public class EnglishChapterClass3ActivityBangla extends AppCompatActivity implem
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(EnglishChapterClass3ActivityBangla.this, BookActivityBangla.class));
+                startActivity(new Intent(EnglishChapterClass3ActivityBangla.this, SubjectActivityBanglaClass_3.class));
             }
         });
         unit1_1image=(ImageView)findViewById(R.id.unit_1_1_image);
@@ -2868,7 +2869,7 @@ public class EnglishChapterClass3ActivityBangla extends AppCompatActivity implem
                             e.printStackTrace();
                         }
 
-                        unit17_3image.setVisibility(View.GONE);
+                        unit17_1image.setVisibility(View.GONE);
                         toolbar.setVisibility(View.VISIBLE);
                         unit_1.setVisibility(View.VISIBLE);
                         unit_2.setVisibility(View.VISIBLE);

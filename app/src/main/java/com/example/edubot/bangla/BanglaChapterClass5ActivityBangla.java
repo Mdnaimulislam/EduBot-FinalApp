@@ -130,7 +130,7 @@ public class BanglaChapterClass5ActivityBangla extends AppCompatActivity impleme
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BanglaChapterClass5ActivityBangla.this, BookActivityBangla.class));
+                startActivity(new Intent(BanglaChapterClass5ActivityBangla.this, SubjectActivityBanglaClass_5.class));
             }
         });
         DatabaseReference chapter_answer = FirebaseDatabase.getInstance().getReference();

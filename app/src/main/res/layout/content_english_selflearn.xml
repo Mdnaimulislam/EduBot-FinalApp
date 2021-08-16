@@ -18,7 +18,7 @@
         android:layout_centerHorizontal="true"/>
 
     <Button
-        android:id="@+id/bangla_qlearn"
+        android:id="@+id/english_qlearn"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="Teach Question"
@@ -28,11 +28,11 @@
         android:backgroundTint="#D32F2F"/>
 
     <Button
-        android:id="@+id/bangla_alearn"
+        android:id="@+id/english_alearn"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:text="Teach Answer"
-        android:layout_below="@id/bangla_qlearn"
+        android:layout_below="@id/english_qlearn"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#388E3C"/>
 

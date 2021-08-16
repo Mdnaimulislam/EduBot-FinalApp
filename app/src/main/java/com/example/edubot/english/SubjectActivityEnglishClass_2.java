@@ -10,8 +10,6 @@ import android.widget.Button;
 
 import com.example.edubot.R;
 
-import com.example.edubot.bangla.BanglaChapterClass2ActivityBangla;
-
 public class SubjectActivityEnglishClass_2 extends AppCompatActivity {
     private Toolbar toolbar;
     private Button bangla_sub;
@@ -30,7 +28,13 @@ public class SubjectActivityEnglishClass_2 extends AppCompatActivity {
         bangla_sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SubjectActivityEnglishClass_2.this, BanglaChapterClass2ActivityBangla.class));
+                startActivity(new Intent(SubjectActivityEnglishClass_2.this, BanglaChapterClass2ActivityEnglish.class));
+            }
+        });
+        english_sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SubjectActivityEnglishClass_2.this, EnglishChapterClass2ActivityEnglish.class));
             }
         });
 

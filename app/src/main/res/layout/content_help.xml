@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="50dp"
     android:background="#CD7979"
-    tools:context=".HelpActivity">
+    tools:context="bangla.HelpActivity">
 
     <EditText
         android:id="@+id/email_subject"

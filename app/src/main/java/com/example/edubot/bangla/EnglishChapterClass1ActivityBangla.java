@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.example.edubot.Choose_Language;
 import com.example.edubot.R;
+import com.example.edubot.english.SubjectActivityEnglishClass_1;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -46,6 +47,7 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
     private ImageView unit3image;
     private ImageView unit4image;
     private ImageView unit5image;
+
     private ImageView unit6image;
     private ImageView unit7image;
     private ImageView unit8image;
@@ -77,7 +79,7 @@ public class EnglishChapterClass1ActivityBangla extends AppCompatActivity implem
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(EnglishChapterClass1ActivityBangla.this, BookActivityBangla.class));
+                startActivity(new Intent(EnglishChapterClass1ActivityBangla.this, SubjectActivityBanglaClass_1.class));
             }
         });
         tts = new TextToSpeech(this, this);

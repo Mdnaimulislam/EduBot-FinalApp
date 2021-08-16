@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.os.SystemClock;
@@ -26,11 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.edubot.Choose_Language;
-import com.example.edubot.GuidlineActivity;
-import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
-import com.example.edubot.WebActivity;
 import com.example.edubot.english.EnglishActivityResponsive;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -147,6 +145,10 @@ public class BanglaActivityManual extends AppCompatActivity implements Navigatio
 
     }
 
+    public void gurbage(){
+
+    }
+
     public void setSpeechRecognizer(){
 
         //Speech recognizer configure
@@ -209,6 +211,13 @@ public class BanglaActivityManual extends AppCompatActivity implements Navigatio
 
                     try {
                         b.intentAction(finalInput);
+                        if(b.check=="c") {
+                            MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.song);
+                            ring.start();
+                            finalInput = "ss";
+
+
+                        }
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -288,6 +297,7 @@ public class BanglaActivityManual extends AppCompatActivity implements Navigatio
 
                             }
 
+
                             else if(finalInput.contains("সম্পর্কে বল")){
                                 try {
                                     Qanswer = QueryWiki(finalInput);
@@ -335,6 +345,64 @@ public class BanglaActivityManual extends AppCompatActivity implements Navigatio
                                             } catch (Exception e) {
                                                 e.printStackTrace();
                                             }
+                                        }
+                                        else if(finalInput!="ss"){
+                                            tts.speak("দুঃখিত আপনার প্রশ্নটি আমি ভুজতে অক্ষম। আমাকে এই প্রশ্নের উত্তর শিখাতে এখনি উত্তরটি বলুন।",TextToSpeech.QUEUE_FLUSH,null);
+                                            SystemClock.sleep(900);
+                                            while (tts.isSpeaking()){
+                                            }
+                                            speechRecognizer.startListening(intentRecognizer);
+                                            speechRecognizer.setRecognitionListener(new RecognitionListener() {
+                                                @Override
+                                                public void onReadyForSpeech(Bundle params) {
+
+                                                }
+
+                                                @Override
+                                                public void onBeginningOfSpeech() {
+
+                                                }
+
+                                                @Override
+                                                public void onRmsChanged(float rmsdB) {
+
+                                                }
+
+                                                @Override
+                                                public void onBufferReceived(byte[] buffer) {
+
+                                                }
+
+                                                @Override
+                                                public void onEndOfSpeech() {
+
+                                                }
+
+                                                @Override
+                                                public void onError(int error) {
+
+                                                }
+
+                                                @Override
+                                                public void onResults(Bundle results) {
+                                                    ArrayList<String> store = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+                                                    String answer = store.get(0);
+
+                                                    slQuestions.child(finalInput).setValue(answer);
+                                                    tts.speak("আপনার উত্তরটি শিখতে সক্ষম হয়েছি",TextToSpeech.QUEUE_FLUSH,null);
+
+                                                }
+
+                                                @Override
+                                                public void onPartialResults(Bundle partialResults) {
+
+                                                }
+
+                                                @Override
+                                                public void onEvent(int eventType, Bundle params) {
+
+                                                }
+                                            });
                                         }
 
                                     }

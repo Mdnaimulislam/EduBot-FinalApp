@@ -18,11 +18,8 @@ import android.widget.Button;
 import android.speech.tts.TextToSpeech;
 import android.widget.TextView;
 
-import com.example.edubot.GuidlineActivity;
-import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
-import com.example.edubot.WebActivity;
 import com.example.edubot.english.EnglishActivityResponsive;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;

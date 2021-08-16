@@ -85,7 +85,7 @@ public class BanglaChapterClass1ActivityBangla extends AppCompatActivity impleme
             @Override
             public void onClick(View view) {
 
-                    startActivity(new Intent(BanglaChapterClass1ActivityBangla.this, BookActivityBangla.class));
+                    startActivity(new Intent(BanglaChapterClass1ActivityBangla.this, SubjectActivityBanglaClass_1.class));
 
 
             }

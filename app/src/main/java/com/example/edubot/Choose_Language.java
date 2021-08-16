@@ -1,11 +1,14 @@
 package com.example.edubot;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -26,6 +29,7 @@ import java.io.OutputStream;
 import java.util.UUID;
 
 public class Choose_Language extends AppCompatActivity implements TextToSpeech.OnInitListener {
+
     private Button logout_btn;
     private Button bangla_btn;
     private Button english_btn;
@@ -48,10 +52,14 @@ public class Choose_Language extends AppCompatActivity implements TextToSpeech.O
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose__language);
+
+
+
 
         english_btn=(Button)findViewById(R.id.english_btn);
         bangla_btn=(Button)findViewById(R.id.bangla_btn);
@@ -316,9 +324,12 @@ public class Choose_Language extends AppCompatActivity implements TextToSpeech.O
                 break;
             case "ডান্স করো":
                 //tts.SpeakTTS("আচ্ছা আমি চেষ্টা করছি");
+
+
+
                 Thread.sleep(1000);
                 connectedThread.write("G");
-                check="b";
+                check="c";
                 break;
             case "dance":
                 //tts.SpeakTTS("আচ্ছা আমি চেষ্টা করছি");

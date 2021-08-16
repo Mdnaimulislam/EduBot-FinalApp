@@ -106,7 +106,7 @@ public class BanglaChapterClass3ActivityBangla extends AppCompatActivity impleme
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(BanglaChapterClass3ActivityBangla.this, BookActivityBangla.class));
+                startActivity(new Intent(BanglaChapterClass3ActivityBangla.this, SubjectActivityBanglaClass_3.class));
             }
         });
 

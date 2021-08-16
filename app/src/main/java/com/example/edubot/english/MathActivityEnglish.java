@@ -20,10 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
-import com.example.edubot.WebActivity;
 import com.example.edubot.bangla.BanglaActivityResponsive;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -259,13 +257,13 @@ public class MathActivityEnglish extends AppCompatActivity implements Navigation
 
         }
         else if(id==R.id.nav_english_tutorial){
-
+            startActivity(new Intent(this, GuidlineActivity_English.class));
         }
         else if(id==R.id.nav_english_website){
-            startActivity(new Intent(this, WebActivity.class));
+            startActivity(new Intent(this, WebActivity_English.class));
         }
         else if(id==R.id.nav_english_help){
-            startActivity(new Intent(this, HelpActivity.class));
+            startActivity(new Intent(this, HelpActivity_English.class));
         }
         else if(id==R.id.nav_bangla_language){
             startActivity(new Intent(this, BanglaActivityResponsive.class));

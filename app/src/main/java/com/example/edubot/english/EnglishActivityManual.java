@@ -24,14 +24,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.example.edubot.Choose_Language;
-import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
 import com.example.edubot.bangla.BanglaActivityResponsive;
-import com.example.edubot.WebActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -52,6 +49,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -69,8 +67,10 @@ public class EnglishActivityManual extends AppCompatActivity implements Navigati
     private FirebaseAuth mAuth;
     private  int x=0;
     private  String question="";
+    String finalInput;
     String Uid="";
     private AudioManager mAudioManager;
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
     private int mStreamVolume;
     Choose_Language b=new Choose_Language();
     TextToSpeech tts;
@@ -197,7 +197,7 @@ public class EnglishActivityManual extends AppCompatActivity implements Navigati
                 String userVoice = "";
                 if (store != null) {
                     userVoice = store.get(0);
-                    String finalInput = userVoice;
+                    finalInput = userVoice;
 
                     try {
                         b.intentAction(finalInput);
@@ -208,6 +208,60 @@ public class EnglishActivityManual extends AppCompatActivity implements Navigati
                         e.printStackTrace();
                     }
 
+                    try {
+                        System.out.println(finalInput);
+                        if (finalInput.contains("plus") ||finalInput.contains("+")) {
+                            String[] arrofstr = userVoice.split(" ");
+                            System.out.println(getDoubleNumberFromText(arrofstr[0]));
+                            System.out.println(getDoubleNumberFromText(arrofstr[2]));
+                            double result =getDoubleNumberFromText(arrofstr[0]) + getDoubleNumberFromText(arrofstr[2]);
+                            System.out.println(result);
+                            tts.speak("Result of the Addition is "+String.valueOf(df2.format(result)), TextToSpeech.QUEUE_FLUSH, null);
+                            while (tts.isSpeaking()) {
+                            }
+                            finalInput = "ss";
+
+
+                        }
+                        else if (finalInput.contains("-") || finalInput.contains("minus")) {
+                            String[] arrofstr = userVoice.split(" ");
+                            System.out.println(getDoubleNumberFromText(arrofstr[0]));
+                            System.out.println(getDoubleNumberFromText(arrofstr[2]));
+                            double result =getDoubleNumberFromText(arrofstr[0]) - getDoubleNumberFromText(arrofstr[2]);
+                            tts.speak("Result of the Subtraction is "+String.valueOf(df2.format(result)), TextToSpeech.QUEUE_FLUSH, null);
+
+                            while (tts.isSpeaking()) {
+                            }
+                            finalInput = "ss";
+
+                        }
+
+                        else if (finalInput.contains("multiply") || finalInput.contains("into")) {
+                            String[] arrofstr = userVoice.split(" ");
+                            System.out.println(getDoubleNumberFromText(arrofstr[0]));
+                            System.out.println(getDoubleNumberFromText(arrofstr[2]));
+                            double result =getDoubleNumberFromText(arrofstr[0]) * getDoubleNumberFromText(arrofstr[2]);
+                            tts.speak("Result of the Multiplication is "+String.valueOf(df2.format(result)), TextToSpeech.QUEUE_FLUSH, null);
+
+                            while (tts.isSpeaking()) {
+                            }
+                            finalInput = "ss";
+
+                        }
+                        else if (finalInput.contains("divide")) {
+                            String[] arrofstr = userVoice.split(" ");
+                            System.out.println(getDoubleNumberFromText(arrofstr[0]));
+                            System.out.println(getDoubleNumberFromText(arrofstr[2]));
+                            double result=getDoubleNumberFromText(arrofstr[0]) / getDoubleNumberFromText(arrofstr[2]);
+                            tts.speak("Result of the Division is "+String.valueOf(df2.format(result)), TextToSpeech.QUEUE_FLUSH, null);
+
+                            while (tts.isSpeaking()) {
+                            }
+                            finalInput = "ss";
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
 
 
                     dbQuestions.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -280,6 +334,64 @@ public class EnglishActivityManual extends AppCompatActivity implements Navigati
                                             }
                                             SystemClock.sleep(900);
                                         }
+                                        else if(finalInput!="ss"){
+                                            tts.speak("I am unable to understand your question, to teach me this question please teach me the answer now.",TextToSpeech.QUEUE_FLUSH,null);
+                                            SystemClock.sleep(900);
+                                            while (tts.isSpeaking()){
+                                            }
+                                            speechRecognizer.startListening(intentRecognizer);
+                                            speechRecognizer.setRecognitionListener(new RecognitionListener() {
+                                                @Override
+                                                public void onReadyForSpeech(Bundle params) {
+
+                                                }
+
+                                                @Override
+                                                public void onBeginningOfSpeech() {
+
+                                                }
+
+                                                @Override
+                                                public void onRmsChanged(float rmsdB) {
+
+                                                }
+
+                                                @Override
+                                                public void onBufferReceived(byte[] buffer) {
+
+                                                }
+
+                                                @Override
+                                                public void onEndOfSpeech() {
+
+                                                }
+
+                                                @Override
+                                                public void onError(int error) {
+
+                                                }
+
+                                                @Override
+                                                public void onResults(Bundle results) {
+                                                    ArrayList<String> store = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+                                                    String answer = store.get(0);
+
+                                                    slQuestions.child(finalInput).setValue(answer);
+                                                    tts.speak("I am able to learn your question answer",TextToSpeech.QUEUE_FLUSH,null);
+
+                                                }
+
+                                                @Override
+                                                public void onPartialResults(Bundle partialResults) {
+
+                                                }
+
+                                                @Override
+                                                public void onEvent(int eventType, Bundle params) {
+
+                                                }
+                                            });
+                                        }
 
                                     }
                                     @Override
@@ -346,13 +458,13 @@ public class EnglishActivityManual extends AppCompatActivity implements Navigati
             startActivity(new Intent(this, MathActivityEnglish.class));
         }
         else if(id==R.id.nav_english_tutorial){
-
+            startActivity(new Intent(this, GuidlineActivity_English.class));
         }
         else if(id==R.id.nav_english_website){
-            startActivity(new Intent(this, WebActivity.class));
+            startActivity(new Intent(this, WebActivity_English.class));
         }
         else if(id==R.id.nav_english_help){
-            startActivity(new Intent(this, HelpActivity.class));
+            startActivity(new Intent(this, HelpActivity_English.class));
         }
         else if(id==R.id.nav_bangla_language){
             startActivity(new Intent(this, BanglaActivityResponsive.class));
@@ -433,6 +545,33 @@ public class EnglishActivityManual extends AppCompatActivity implements Navigati
 
 
         return output;
+    }
+    // method to convert string number to integer
+    private double getDoubleNumberFromText(String strNum) {
+        switch (strNum) {
+            case "one":
+                return 1.0;
+            case "two":
+                return 2.0;
+            case "three":
+                return 3.0;
+            case "four":
+                return 4.0;
+            case "five":
+                return 5.0;
+            case "six":
+                return 6.0;
+            case "seven":
+                return 7.0;
+            case "eight":
+                return 8.0;
+            case "nine":
+                return 9.0;
+            case "ten":
+                return 10.0;
+            default:
+                return Double.parseDouble(strNum);
+        }
     }
 
 }

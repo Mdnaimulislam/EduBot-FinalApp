@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.example.edubot.Choose_Language;
 import com.example.edubot.R;
+import com.example.edubot.english.SubjectActivityEnglishClass_2;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -81,7 +82,7 @@ public class EnglishChapterClass2ActivityBangla extends AppCompatActivity implem
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(EnglishChapterClass2ActivityBangla.this, BookActivityBangla.class));
+                startActivity(new Intent(EnglishChapterClass2ActivityBangla.this, SubjectActivityBanglaClass_2.class));
 
             }
         });

@@ -14,10 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.edubot.HelpActivity;
 import com.example.edubot.MainActivity;
 import com.example.edubot.R;
-import com.example.edubot.WebActivity;
 import com.example.edubot.bangla.BanglaActivityResponsive;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -124,13 +122,13 @@ public class BookActivityEnglish extends AppCompatActivity implements Navigation
             startActivity(new Intent(this, MathActivityEnglish.class));
         }
         else if(id==R.id.nav_english_tutorial){
-
+            startActivity(new Intent(this, GuidlineActivity_English.class));
         }
         else if(id==R.id.nav_english_website){
-            startActivity(new Intent(this, WebActivity.class));
+            startActivity(new Intent(this, WebActivity_English.class));
         }
         else if(id==R.id.nav_english_help){
-            startActivity(new Intent(this, HelpActivity.class));
+            startActivity(new Intent(this, HelpActivity_English.class));
         }
         else if(id==R.id.nav_bangla_language){
             startActivity(new Intent(this, BanglaActivityResponsive.class));
